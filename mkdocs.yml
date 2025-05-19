@@ -24,6 +24,7 @@ theme:
         name: Light mode
       primary: blue
       accent: deep orange
+
 markdown_extensions:
   - attr_list
   - pymdownx.emoji:
@@ -61,5 +62,12 @@ markdown_extensions:
 #      link: https://youtube.com/@james-willett
 #    - icon: simple/linkedin
 #      link: https://linkedin.com/in/willettjames
+#theme:
+#  features:
+#    - content.code.copytheme:
+#  features:
+#    - content.code.copytheme:
+#  features:
+#    - content.code.copy
 
 copyright: Copyright &copy; 2025 C. O'Shaughnessy as inspired by James Willett
