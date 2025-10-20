@@ -16,7 +16,7 @@
 | 192.168.1.178  | swarm2 CLI web             |
 | 192.168.1.180  | web-ct ubuntu              |
 | 192.168.1.181  | swarm3 CLI web             |
-| 192.168.1.182  | Ubuntu GUI Ansible Master  |
+| 192.168.1.3  | Ubuntu GUI Ansible Master  |
 | 192.168.1.183  | snipe-it web               |
 | 192.168.1.185  | Centos7                    |
 | 192.168.1.186  | Alma9.5 CLI web            |
