@@ -1,34 +1,25 @@
-| 192.168.1.1 |  |  |  |  |
-| 192.168.1.2 |  |  | 22/open/tcp//ssh///, 80/open/tcp//http///, 139/filtered/tcp//netbios-ssn///, 443/open/tcp//https///, 445/filtered/tcp//microsoft-ds///, 8080/open/tcp//http-proxy///	Seq Index: 245	IP ID Seq: All zeros |  |
-| 192.168.1.5 |  |  | 22/open/tcp//ssh///, 80/filtered/tcp//http///, 139/filtered/tcp//netbios-ssn///, 443/filtered/tcp//https///, 445/filtered/tcp//microsoft-ds///, 8080/filtered/tcp//http-proxy///	Seq Index: 260	IP ID Seq: All zeros |  |
-| 192.168.1.60 |  |  | 22/filtered/tcp//ssh///, 80/open/tcp//http///, 139/open/tcp//netbios-ssn///, 443/filtered/tcp//https///, 445/open/tcp//microsoft-ds///, 8080/filtered/tcp//http-proxy///	Seq Index: 255	IP ID Seq: All zeros |  |
-| 192.168.1.70 |  |  | 22/open/tcp//ssh///, 80/open/tcp//http///, 139/filtered/tcp//netbios-ssn///, 443/open/tcp//https///, 445/filtered/tcp//microsoft-ds///, 8080/filtered/tcp//http-proxy///	Seq Index: 262	IP ID Seq: All zeros |  |
-| 192.168.1.100 |  |  | 22/open/tcp//ssh///, 80/open/tcp//http///, 139/filtered/tcp//netbios-ssn///, 443/open/tcp//https///, 445/filtered/tcp//microsoft-ds///, 8080/filtered/tcp//http-proxy///	Seq Index: 258	IP ID Seq: All zeros |  |
-| 192.168.1.117 |  |  | 22/open/tcp//ssh///, 80/filtered/tcp//http///, 139/open/tcp//netbios-ssn///, 443/filtered/tcp//https///, 445/open/tcp//microsoft-ds///, 8080/filtered/tcp//http-proxy///	Seq Index: 260	IP ID Seq: Incremental |  |
-| 192.168.1.129 |  |  | 22/filtered/tcp//ssh///, 80/filtered/tcp//http///, 139/filtered/tcp//netbios-ssn///, 443/filtered/tcp//https///, 445/filtered/tcp//microsoft-ds///, 8080/filtered/tcp//http-proxy/// |  |
-| 192.168.1.140 |  |  | 22/open/tcp//ssh///, 80/filtered/tcp//http///, 139/filtered/tcp//netbios-ssn///, 443/filtered/tcp//https///, 445/filtered/tcp//microsoft-ds///, 8080/filtered/tcp//http-proxy///	Seq Index: 264	IP ID Seq: All zeros |  |
-| 192.168.1.141 |  |  | 22/filtered/tcp//ssh///, 80/filtered/tcp//http///, 139/filtered/tcp//netbios-ssn///, 443/filtered/tcp//https///, 445/filtered/tcp//microsoft-ds///, 8080/filtered/tcp//http-proxy/// |  |
-| 192.168.1.160 |  |  | 22/filtered/tcp//ssh///, 80/filtered/tcp//http///, 139/filtered/tcp//netbios-ssn///, 443/filtered/tcp//https///, 445/filtered/tcp//microsoft-ds///, 8080/filtered/tcp//http-proxy/// |  |
-| 192.168.1.161 |  |  | 22/filtered/tcp//ssh///, 80/filtered/tcp//http///, 139/filtered/tcp//netbios-ssn///, 443/filtered/tcp//https///, 445/filtered/tcp//microsoft-ds///, 8080/filtered/tcp//http-proxy/// |  |
-| 192.168.1.167 |  |  | 22/filtered/tcp//ssh///, 80/filtered/tcp//http///, 139/filtered/tcp//netbios-ssn///, 443/filtered/tcp//https///, 445/filtered/tcp//microsoft-ds///, 8080/filtered/tcp//http-proxy/// |  |
-| 192.168.1.172 |  |  | 22/filtered/tcp//ssh///, 80/filtered/tcp//http///, 139/filtered/tcp//netbios-ssn///, 443/filtered/tcp//https///, 445/filtered/tcp//microsoft-ds///, 8080/filtered/tcp//http-proxy/// |  |
-| 192.168.1.177 |  |  | 22/open/tcp//ssh///, 80/open/tcp//http///, 139/filtered/tcp//netbios-ssn///, 443/filtered/tcp//https///, 445/filtered/tcp//microsoft-ds///, 8080/filtered/tcp//http-proxy///	Seq Index: 263	IP ID Seq: All zeros |  |
-| 192.168.1.181 |  |  | 22/open/tcp//ssh///, 80/open/tcp//http///, 139/filtered/tcp//netbios-ssn///, 443/filtered/tcp//https///, 445/filtered/tcp//microsoft-ds///, 8080/filtered/tcp//http-proxy///	Seq Index: 261	IP ID Seq: All zeros |  |
-| 192.168.1.186 |  |  | 22/filtered/tcp//ssh///, 80/filtered/tcp//http///, 139/filtered/tcp//netbios-ssn///, 443/filtered/tcp//https///, 445/filtered/tcp//microsoft-ds///, 8080/filtered/tcp//http-proxy/// |  |
-| 192.168.1.187 |  |  | 22/open/tcp//ssh///, 80/open/tcp//http///, 139/filtered/tcp//netbios-ssn///, 443/filtered/tcp//https///, 445/filtered/tcp//microsoft-ds///, 8080/filtered/tcp//http-proxy///	Seq Index: 260	IP ID Seq: All zeros |  |
-| 192.168.1.188 |  |  | 22/open/tcp//ssh///, 80/filtered/tcp//http///, 139/filtered/tcp//netbios-ssn///, 443/filtered/tcp//https///, 445/filtered/tcp//microsoft-ds///, 8080/filtered/tcp//http-proxy///	Seq Index: 259	IP ID Seq: All zeros |  |
-| 192.168.1.189 |  |  | 22/open/tcp//ssh///, 80/filtered/tcp//http///, 139/open/tcp//netbios-ssn///, 443/filtered/tcp//https///, 445/open/tcp//microsoft-ds///, 8080/filtered/tcp//http-proxy///	Seq Index: 259	IP ID Seq: All zeros |  |
-| 192.168.1.192 |  |  | 22/filtered/tcp//ssh///, 80/filtered/tcp//http///, 139/filtered/tcp//netbios-ssn///, 443/filtered/tcp//https///, 445/filtered/tcp//microsoft-ds///, 8080/filtered/tcp//http-proxy/// |  |
-| 192.168.1.200 |  |  | 22/open/tcp//ssh///, 80/open/tcp//http///, 139/filtered/tcp//netbios-ssn///, 443/filtered/tcp//https///, 445/filtered/tcp//microsoft-ds///, 8080/filtered/tcp//http-proxy///	Seq Index: 256	IP ID Seq: All zeros |  |
-| 192.168.1.205 |  |  | 22/open/tcp//ssh///, 80/filtered/tcp//http///, 139/open/tcp//netbios-ssn///, 443/filtered/tcp//https///, 445/open/tcp//microsoft-ds///, 8080/filtered/tcp//http-proxy///	Seq Index: 258	IP ID Seq: All zeros |  |
-| 192.168.1.207 |  |  | 22/open/tcp//ssh///, 80/filtered/tcp//http///, 139/filtered/tcp//netbios-ssn///, 443/filtered/tcp//https///, 445/filtered/tcp//microsoft-ds///, 8080/filtered/tcp//http-proxy///	Seq Index: 252	IP ID Seq: All zeros |  |
-| 192.168.1.211 |  |  | 22/open/tcp//ssh///, 80/filtered/tcp//http///, 139/filtered/tcp//netbios-ssn///, 443/filtered/tcp//https///, 445/filtered/tcp//microsoft-ds///, 8080/filtered/tcp//http-proxy///	Seq Index: 262	IP ID Seq: All zeros |  |
-| 192.168.1.234 |  |  | 22/filtered/tcp//ssh///, 80/filtered/tcp//http///, 139/filtered/tcp//netbios-ssn///, 443/filtered/tcp//https///, 445/filtered/tcp//microsoft-ds///, 8080/filtered/tcp//http-proxy/// |  |
-| 192.168.1.239 |  |  | 22/open/tcp//ssh///, 80/open/tcp//http///, 139/filtered/tcp//netbios-ssn///, 443/open/tcp//https///, 445/filtered/tcp//microsoft-ds///, 8080/filtered/tcp//http-proxy///	Seq Index: 261	IP ID Seq: All zeros |  |
-| 192.168.1.240 |  |  | 22/filtered/tcp//ssh///, 80/filtered/tcp//http///, 139/filtered/tcp//netbios-ssn///, 443/filtered/tcp//https///, 445/filtered/tcp//microsoft-ds///, 8080/filtered/tcp//http-proxy/// |  |
-| 192.168.1.246 |  |  | 22/filtered/tcp//ssh///, 80/open/tcp//http///, 139/open/tcp//netbios-ssn///, 443/filtered/tcp//https///, 445/open/tcp//microsoft-ds///, 8080/open/tcp//http-proxy///	Seq Index: 260	IP ID Seq: Incremental |  |
-| 192.168.1.247 |  |  | 22/open/tcp//ssh///, 80/open/tcp//http///, 139/filtered/tcp//netbios-ssn///, 443/filtered/tcp//https///, 445/filtered/tcp//microsoft-ds///, 8080/filtered/tcp//http-proxy///	Seq Index: 258	IP ID Seq: All zeros |  |
-| 192.168.1.249 |  |  | 22/open/tcp//ssh///, 80/open/tcp//http///, 139/filtered/tcp//netbios-ssn///, 443/filtered/tcp//https///, 445/filtered/tcp//microsoft-ds///, 8080/filtered/tcp//http-proxy///	Seq Index: 259	IP ID Seq: All zeros |  |
-| 192.168.1.250 |  |  | 22/open/tcp//ssh///, 80/filtered/tcp//http///, 139/filtered/tcp//netbios-ssn///, 443/filtered/tcp//https///, 445/filtered/tcp//microsoft-ds///, 8080/filtered/tcp//http-proxy///	Seq Index: 259	IP ID Seq: All zeros |  |
-| 192.168.1.3 |  |  | 22/open/tcp//ssh///, 80/open/tcp//http///, 139/filtered/tcp//netbios-ssn///, 443/filtered/tcp//https///, 445/filtered/tcp//microsoft-ds///, 8080/filtered/tcp//http-proxy///	Seq Index: 263	IP ID Seq: All zeros |  |
-_Last update: Sun Oct 19 11:42:33 PM EDT 2025_
+| IP Address | Hostname | Operating System | Open Ports | MAC Address |
+|------------|----------|-----------------|------------|-------------|
+| 192.168.1.1 | console.gl-inet.com | Linux 2.6.18 | 22/tcp open ssh, 53/tcp open domain, 80/tcp open http, 443/tcp open https, 8080/tcp open http-proxy | 94:83:C4:AA:EE:FF |
+| 192.168.1.2 | proxmox.lan | Linux 4.15 - 5.8 | 22/tcp open ssh | 70:85:C2:72:C0:AB |
+| 192.168.1.5 | freenas.lan | FreeBSD 11.0-RELEASE | 80/tcp open http, 139/tcp open netbios-ssn, 445/tcp open microsoft-ds | 94:DE:80:AF:52:23 |
+| 192.168.1.60 |  | Linux 4.15 - 5.8 | 22/tcp open ssh, 53/tcp open domain, 80/tcp open http, 443/tcp open https | BC:24:11:E8:54:9D |
+| 192.168.1.70 | octopi.lan | Linux 4.15 - 5.8 | 22/tcp open ssh, 80/tcp open http, 443/tcp open https | DC:A6:32:5E:04:08 |
+| 192.168.1.100 | Amontillado.lan | Microsoft Windows 11 21H2 | 22/tcp open ssh, 135/tcp open msrpc, 139/tcp open netbios-ssn, 445/tcp open microsoft-ds | 04:7C:16:C1:44:8E |
+| 192.168.1.129 | docker-ubuntu-176.lan | Linux 4.15 - 5.8 | 22/tcp open ssh, 8000/tcp open http-alt | BC:24:11:D6:72:F2 |
+| 192.168.1.172 |  | Linux 4.15 - 5.8 | 22/tcp open ssh, 80/tcp open http, 8000/tcp open http-alt | 00:15:5D:00:B3:03 |
+| 192.168.1.177 | web-ct-180.lan | Linux 4.15 - 5.8 | 22/tcp open ssh, 80/tcp open http | BC:24:11:6A:76:CC |
+| 192.168.1.186 |  | Linux 4.15 - 5.8 | 22/tcp open ssh, 80/tcp open http | BC:24:11:E5:47:A1 |
+| 192.168.1.187 |  | Linux 4.15 - 5.8 | 22/tcp open ssh | BC:24:11:32:E4:F2 |
+| 192.168.1.188 | lts.lan | Linux 4.15 - 5.8 | 22/tcp open ssh, 139/tcp open netbios-ssn, 445/tcp open microsoft-ds | 00:15:5D:00:B3:18 |
+| 192.168.1.192 | swarm01.lan | Linux 4.15 - 5.8 | 22/tcp open ssh, 80/tcp open http | BC:24:11:9C:D8:2F |
+| 192.168.1.200 |  | Linux 4.15 - 5.8 | 22/tcp open ssh, 139/tcp open netbios-ssn, 445/tcp open microsoft-ds | 00:15:5D:00:B3:18 |
+| 192.168.1.205 | ubuntu-ansible.lan | Linux 4.15 - 5.8 | 22/tcp open ssh | BC:24:11:C0:7C:BC |
+| 192.168.1.207 | dockerlocal.lan | Linux 5.0 - 5.5 | 22/tcp open ssh, 8000/tcp open http-alt | BC:24:11:E3:70:53 |
+| 192.168.1.234 |  | Linux 3.2 | 22/tcp open ssh, 80/tcp open http, 443/tcp open https | BC:24:11:04:68:29 |
+| 192.168.1.240 |  | Microsoft Windows XP SP3 | 80/tcp open http, 135/tcp open msrpc, 139/tcp open netbios-ssn, 445/tcp open microsoft-ds, 8080/tcp open http-proxy | 00:15:5D:00:B3:08 |
+| 192.168.1.246 | swam03.lan | Linux 4.15 - 5.8 | 22/tcp open ssh, 80/tcp open http | BC:24:11:3C:C5:B6 |
+| 192.168.1.247 | swarm02.lan | Linux 4.15 - 5.8 | 22/tcp open ssh, 80/tcp open http | BC:24:11:3C:60:0B |
+| 192.168.1.249 | kasm-2404-deb.lan | Linux 4.15 - 5.8 | 22/tcp open ssh | BC:24:11:D7:B3:48 |
+| 192.168.1.250 |  | Linux 4.15 - 5.8 | 22/tcp open ssh, 80/tcp open http | BC:24:11:9C:D8:2F |
+| 192.168.1.3 | mkdocs.lan | Linux 2.6.32 | 22/tcp open ssh, 80/tcp open http, 8000/tcp open http-alt |  |
