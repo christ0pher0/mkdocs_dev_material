@@ -2,7 +2,6 @@
 import re
 import os
 from ipaddress import ip_address
-from datetime import datetime
 
 WORKDIR = os.path.expanduser("~/material/mkdocs_dev_material")
 SCAN_MD = os.path.join(WORKDIR, "docs/scan_results.md")
@@ -13,9 +12,9 @@ previous_notes = {}
 if os.path.exists(HOSTS_MD):
     with open(HOSTS_MD, "r") as f:
         lines = f.readlines()
-    for line in lines[3:]:  # skip header + separator + timestamp line
+    for line in lines[2:]:  # skip header + separator
         cols = [c.strip() for c in line.strip().split("|")]
-        if len(cols) >= 6:  # 6 columns now
+        if len(cols) >= 6:  # now 6 columns instead of 7
             previous_notes[cols[1]] = cols[5]
 
 hosts = []
@@ -23,7 +22,7 @@ hosts = []
 with open(SCAN_MD, "r") as f:
     for line in f:
         line = line.strip()
-        if not line or line.startswith("| IP Address") or line.startswith("#") or line.startswith("_Last update"):
+        if not line or line.startswith("| IP Address") or line.startswith("#"):
             continue
         parts = [p.strip() for p in line.strip("|").split("|")]
         if len(parts) < 5:
@@ -55,8 +54,6 @@ hosts.sort(key=lambda h: ip_address(h["ip"]))
 
 # Write Markdown table
 with open(HOSTS_MD, "w") as f:
-    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    f.write(f"_Last update: {timestamp}_\n\n")
     f.write("# Hosts\n\n")
     f.write("| # | Hostname | IP Address | MAC Address | Status | Notes |\n")
     f.write("|---|----------|------------|------------|--------|-------|\n")
