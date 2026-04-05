@@ -63,6 +63,4 @@ nav:
   - Network Devices: network_devices.md
   - Network Diagram: network_diagram.md
   - Todo: todo.md
-  - Proxmox: proxmox.md
 copyright: Copyright &copy; 2025 C. O'Shaughnessy as inspired by James Willett
-
