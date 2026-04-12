@@ -64,5 +64,8 @@ nav:
   - Network Diagram: network_diagram.md
   - Todo: todo.md
   - Proxmox: proxmox.md
+  - Network Schema: network-schema.md
+  - Network Context: network_context.md
+  - Hardware Inventory: hw_inv.md
 copyright: Copyright &copy; 2025 C. O'Shaughnessy as inspired by James Willett
 

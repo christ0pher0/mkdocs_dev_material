@@ -1,6 +1,26 @@
 # Service Status Report
 
-_Last updated: 2026-04-04 01:20 AM EDT_
+_Last updated: 2026-04-12 12:20 AM EDT_
+
+??? info "plow-rpm"
+
+    | Service | Status |
+    |---------|--------|
+    | sshd | OK |
+    | fail2ban | OK |
+    | chronyd | OK |
+    | docker | OK |
+    | httpd | NOT INSTALLED |
+
+??? info "mediastack-deb"
+
+    | Service | Status |
+    |---------|--------|
+    | ssh | OK |
+    | fail2ban | OK |
+    | chrony | NOT INSTALLED |
+    | docker | OK |
+    | apache2 | NOT INSTALLED |
 
 ??? info "octopi-deb"
 
@@ -52,6 +72,16 @@ _Last updated: 2026-04-04 01:20 AM EDT_
     | docker | OK |
     | apache2 | OK |
 
+??? info "docker-deb"
+
+    | Service | Status |
+    |---------|--------|
+    | ssh | OK |
+    | fail2ban | OK |
+    | chrony | NOT INSTALLED |
+    | docker | OK |
+    | apache2 | NOT INSTALLED |
+
 ??? info "apache-deb"
 
     | Service | Status |
@@ -81,6 +111,26 @@ _Last updated: 2026-04-04 01:20 AM EDT_
     | chrony | OK |
     | docker | OK |
     | apache2 | OK |
+
+??? info "git-ansible-deb"
+
+    | Service | Status |
+    |---------|--------|
+    | ssh | OK |
+    | fail2ban | OK |
+    | chrony | NOT INSTALLED |
+    | docker | OK |
+    | apache2 | OK |
+
+??? info "argos-deb"
+
+    | Service | Status |
+    |---------|--------|
+    | ssh | OK |
+    | fail2ban | NOT INSTALLED |
+    | chrony | NOT INSTALLED |
+    | docker | NOT INSTALLED |
+    | apache2 | NOT INSTALLED |
 
 ??? info "grafana-docker-deb"
 

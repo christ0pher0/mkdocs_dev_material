@@ -1,6 +1,6 @@
 # User Audit Report
 
-_Last updated: 2026-04-03 07:19 PM EDT_
+_Last updated: 2026-04-11 02:00 AM EDT_
 
 ??? info "snipeit-deb (4 users)"
     | Username | UID | Shell | Sudo | Empty Password | Online |
@@ -10,11 +10,10 @@ _Last updated: 2026-04-03 07:19 PM EDT_
     | cos | 1002 | /bin/bash | YES | OK | ONLINE |
     | frodo | 1003 | /bin/sh | YES | OK | OFFLINE |
 
-??? info "rocky-rpm (2 users)"
+??? info "rocky-rpm (1 users)"
     | Username | UID | Shell | Sudo | Empty Password | Online |
     |----------|-----|-------|------|----------------|--------|
     | cos | 1000 | /bin/bash | YES | OK | ONLINE |
-    | frodo | 1001 | /bin/bash | YES | WARNING | OFFLINE |
 
 ??? info "swarm03-deb (3 users)"
     | Username | UID | Shell | Sudo | Empty Password | Online |
@@ -23,10 +22,22 @@ _Last updated: 2026-04-03 07:19 PM EDT_
     | frodo | 1001 | /bin/sh | YES | OK | OFFLINE |
     | ceph | 64045 | /usr/sbin/nologin | NO | OK | OFFLINE |
 
+??? info "plow-rpm (2 users)"
+    | Username | UID | Shell | Sudo | Empty Password | Online |
+    |----------|-----|-------|------|----------------|--------|
+    | roo | 1000 | /bin/bash | YES | OK | OFFLINE |
+    | cos | 1001 | /bin/bash | YES | OK | ONLINE |
+
 ??? info "ubuntu-ansible-deb (1 users)"
     | Username | UID | Shell | Sudo | Empty Password | Online |
     |----------|-----|-------|------|----------------|--------|
     | cos | 1000 | /bin/bash | YES | OK | ONLINE |
+
+??? info "git-ansible-deb (2 users)"
+    | Username | UID | Shell | Sudo | Empty Password | Online |
+    |----------|-----|-------|------|----------------|--------|
+    | cos | 1000 | /bin/bash | YES | OK | ONLINE |
+    | frodo | 1001 | /bin/sh | YES | OK | OFFLINE |
 
 ??? info "swarm02-deb (3 users)"
     | Username | UID | Shell | Sudo | Empty Password | Online |
@@ -41,17 +52,21 @@ _Last updated: 2026-04-03 07:19 PM EDT_
     | webcam | 1001 | /bin/bash | NO | OK | OFFLINE |
     | cos | 1000 | /bin/bash | YES | OK | ONLINE |
 
-??? info "alma-rpm (2 users)"
+??? info "alma-rpm (1 users)"
     | Username | UID | Shell | Sudo | Empty Password | Online |
     |----------|-----|-------|------|----------------|--------|
     | cos | 1000 | /bin/bash | YES | OK | ONLINE |
-    | frodo | 1001 | /bin/bash | YES | WARNING | OFFLINE |
 
 ??? info "kasm-2404-deb (2 users)"
     | Username | UID | Shell | Sudo | Empty Password | Online |
     |----------|-----|-------|------|----------------|--------|
     | cos | 1000 | /bin/bash | YES | OK | ONLINE |
     | kasm | 1001 | /bin/sh | NO | OK | OFFLINE |
+
+??? info "docker-deb (1 users)"
+    | Username | UID | Shell | Sudo | Empty Password | Online |
+    |----------|-----|-------|------|----------------|--------|
+    | cos | 1000 | /bin/bash | YES | OK | ONLINE |
 
 ??? info "grafana-docker-deb (1 users)"
     | Username | UID | Shell | Sudo | Empty Password | Online |
@@ -63,6 +78,11 @@ _Last updated: 2026-04-03 07:19 PM EDT_
     |----------|-----|-------|------|----------------|--------|
     | cos | 1000 | /bin/bash | YES | OK | ONLINE |
     | frodo | 1001 | /bin/sh | YES | OK | OFFLINE |
+
+??? info "mediastack-deb (1 users)"
+    | Username | UID | Shell | Sudo | Empty Password | Online |
+    |----------|-----|-------|------|----------------|--------|
+    | cos | 1000 | /bin/bash | YES | OK | ONLINE |
 
 ??? info "swarm01-deb (3 users)"
     | Username | UID | Shell | Sudo | Empty Password | Online |
