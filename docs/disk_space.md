@@ -1,6 +1,6 @@
 # Disk Space Report
 
-_Last updated: 2026-04-12 12:15 AM EDT_
+_Last updated: 2026-04-12 02:15 AM EDT_
 ## Summary
 
 | Host | Healthy Filesystems |
@@ -23,7 +23,6 @@ _Last updated: 2026-04-12 12:15 AM EDT_
 | alma-rpm | ✅ 2 OK |
 | plow-rpm | ✅ 8 OK |
 | octopi-deb | ✅ 2 OK |
-| argos-deb | ✅ 2 OK |
 
 ## Problems
 

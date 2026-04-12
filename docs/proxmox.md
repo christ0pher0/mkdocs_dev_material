@@ -1,14 +1,14 @@
 # Proxmox Monitor
 
-_Last updated: 2026-04-12 12:30 AM EDT_
+_Last updated: 2026-04-12 01:30 AM EDT_
 
 ## Node Status
 
 | Property | Value |
 |----------|-------|
-| **CPU Usage** | 8.9% |
-| **RAM Used** | 83.7% (19.57GB / 23.39GB) |
-| **Uptime** | 178h 51m |
+| **CPU Usage** | 9.1% |
+| **RAM Used** | 81.1% (18.96GB / 23.39GB) |
+| **Uptime** | 179h 51m |
 | **Kernel** | Linux 6.8.12-20-pve #1 SMP PREEMPT_DYNAMIC PMX 6.8.12-20 (2026-03-13T08:15Z) |
 
 ## Virtual Machines
@@ -42,9 +42,9 @@ _Last updated: 2026-04-12 12:30 AM EDT_
 | Storage | Type | Used | Total | Usage |
 |---------|------|------|-------|-------|
 | DIR_SDA | dir | 208.01GB | 5543.88GB | 3.8% |
-| local | dir | 5.79GB | 93.93GB | 6.2% |
+| local | dir | 5.8GB | 93.93GB | 6.2% |
 | local-lvm | lvmthin | 62.85GB | 816.21GB | 7.7% |
-| zfs-backups | dir | 170.17GB | 5289.22GB | 3.2% |
-| zfs-iso | dir | 170.17GB | 5289.22GB | 3.2% |
-| ZFS_SDBC | zfspool | 336.95GB | 5456.0GB | 6.2% |
-| ZFSData01 | dir | 170.17GB | 5289.22GB | 3.2% |
+| zfs-backups | dir | 170.26GB | 5289.22GB | 3.2% |
+| zfs-iso | dir | 170.26GB | 5289.22GB | 3.2% |
+| ZFS_SDBC | zfspool | 337.03GB | 5456.0GB | 6.2% |
+| ZFSData01 | dir | 170.26GB | 5289.22GB | 3.2% |

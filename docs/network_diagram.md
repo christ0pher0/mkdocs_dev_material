@@ -1,6 +1,6 @@
 # Network Diagram
 
-_Last update: 2026-04-12 00:10:01_
+_Last update: 2026-04-12 02:10:01_
 
 ```mermaid
 graph LR
@@ -71,7 +71,9 @@ graph LR
     GRP_linux --> argos_deb
     pi4_deb["pi4-deb<br/>192.168.1.209<br/>Linux"]
     GRP_linux --> pi4_deb
-    pi2_deb["pi2-deb<br/>192168.1.121<br/>Linux"]
+    pi1_deb["pi1-deb<br/>192.168.1.120<br/>Linux"]
+    GRP_linux --> pi1_deb
+    pi2_deb["pi2-deb<br/>192.168.1.121<br/>Linux"]
     GRP_linux --> pi2_deb
 
     GRP_windows[Windows]
@@ -245,6 +247,7 @@ graph LR
     class pi4_deb linux
     class argos_deb linux
     class pi4_deb linux
+    class pi1_deb linux
     class pi2_deb linux
     class GRP_windows group
     class amontillado_win windows

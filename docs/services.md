@@ -1,6 +1,6 @@
 # Service Status Report
 
-_Last updated: 2026-04-12 12:20 AM EDT_
+_Last updated: 2026-04-12 02:20 AM EDT_
 
 ??? info "plow-rpm"
 
@@ -122,13 +122,13 @@ _Last updated: 2026-04-12 12:20 AM EDT_
     | docker | OK |
     | apache2 | OK |
 
-??? info "argos-deb"
+??? info "pve2"
 
     | Service | Status |
     |---------|--------|
     | ssh | OK |
     | fail2ban | NOT INSTALLED |
-    | chrony | NOT INSTALLED |
+    | chrony | OK |
     | docker | NOT INSTALLED |
     | apache2 | NOT INSTALLED |
 
