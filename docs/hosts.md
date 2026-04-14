@@ -1,14 +1,14 @@
 # Hosts
-_Last update: 2026-04-12 02:05:01_
+_Last update: 2026-04-14 08:05:01_
 
 | # | Hostname | IP Address | MAC Address | OS | Status | Notes |
 |---|----------|------------|------------|----|--------|-------|
 | 1 | router-net | 192.168.1.1 | 94:83:C4:AA:EE:FF | Network Device | Online | ------ |
-| 2 | proxmox-deb | 192.168.1.2 | 70:85:C2:72:C0:AB | Debian/Ubuntu Linux | Online | ------ |
+| 2 | shardik | 192.168.1.2 | 70:85:C2:72:C0:AB | Linux 4.15 - 5.8 | Online | ------ |
 | 3 | git-ansible-deb | 192.168.1.3 |  | Debian/Ubuntu Linux | Online | ------ |
 | 4 | freenas-bsd | 192.168.1.5 | 94:DE:80:AF:52:23 | FreeBSD | Online | ------ |
 | 5 | netgate-net | 192.168.1.6 | F0:AD:4E:1B:E7:62 | Network Device | Online | ------ |
-| 6 | pve2 | 192.168.1.7 | D8:9E:F3:0C:62:CC | Linux 4.15 - 5.8 | Online | ------ |
+| 6 | maturin | 192.168.1.7 | D8:9E:F3:0C:62:CC | Linux 5.0 - 5.5 | Online | ------ |
 | 7 | snipeit-deb | 192.168.1.20 | BC:24:11:04:68:29 | Debian/Ubuntu Linux | Online | ------ |
 | 8 | grafana-docker-deb | 192.168.1.21 | BC:24:11:D6:72:F2 | Debian/Ubuntu Linux | Online | ------ |
 | 9 | swarm01-deb | 192.168.1.22 | BC:24:11:9C:D8:2F | Debian/Ubuntu Linux | Online | ------ |
@@ -33,6 +33,5 @@ _Last update: 2026-04-12 02:05:01_
 | 28 | tv2-media | 192.168.1.141 | 22:57:5A:A7:04:87 | Media Device | Online | ------ |
 | 29 | weltgeist-media | 192.168.1.143 | 94:DE:80:30:63:78 | Media Device | Online | ------ |
 | 30 | alea_iacta_est-media | 192.168.1.144 | 94:DE:80:22:B6:05 | Media Device | Online | ------ |
-| 31 | firetv-media | 192.168.1.145 | 74:E2:0C:D6:71:DD | Media Device | Online | ------ |
-| 32 | fire-tablet-droid | 192.168.1.202 | B0:FC:0D:51:8F:78 | Android | Online | ------ |
-| 33 | swarm-shared-vip | 192.168.1.250 | BC:24:11:3C:C5:B6 | Virtual IP | Online | ------ |
+| 31 | fire-tablet-droid | 192.168.1.202 | B0:FC:0D:51:8F:78 | Android | Online | ------ |
+| 32 | swarm-shared-vip | 192.168.1.250 | BC:24:11:3C:60:0B | Virtual IP | Online | ------ |

@@ -1,6 +1,6 @@
 # Service Status Report
 
-_Last updated: 2026-04-12 02:20 AM EDT_
+_Last updated: 2026-04-14 07:20 AM EDT_
 
 ??? info "plow-rpm"
 
@@ -122,16 +122,6 @@ _Last updated: 2026-04-12 02:20 AM EDT_
     | docker | OK |
     | apache2 | OK |
 
-??? info "pve2"
-
-    | Service | Status |
-    |---------|--------|
-    | ssh | OK |
-    | fail2ban | NOT INSTALLED |
-    | chrony | OK |
-    | docker | NOT INSTALLED |
-    | apache2 | NOT INSTALLED |
-
 ??? info "grafana-docker-deb"
 
     | Service | Status |
@@ -159,16 +149,6 @@ _Last updated: 2026-04-12 02:20 AM EDT_
     | ssh | OK |
     | fail2ban | NOT INSTALLED |
     | chrony | FAILED |
-    | docker | NOT INSTALLED |
-    | apache2 | NOT INSTALLED |
-
-??? info "proxmox-deb"
-
-    | Service | Status |
-    |---------|--------|
-    | ssh | OK |
-    | fail2ban | OK |
-    | chrony | OK |
     | docker | NOT INSTALLED |
     | apache2 | NOT INSTALLED |
 

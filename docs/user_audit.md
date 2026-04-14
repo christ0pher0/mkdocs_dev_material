@@ -1,6 +1,6 @@
 # User Audit Report
 
-_Last updated: 2026-04-12 02:00 AM EDT_
+_Last updated: 2026-04-14 02:00 AM EDT_
 
 ??? info "snipeit-deb (4 users)"
     | Username | UID | Shell | Sudo | Empty Password | Online |
@@ -21,12 +21,6 @@ _Last updated: 2026-04-12 02:00 AM EDT_
     | cos | 1000 | /bin/bash | YES | OK | ONLINE |
     | frodo | 1001 | /bin/sh | YES | OK | OFFLINE |
     | ceph | 64045 | /usr/sbin/nologin | NO | OK | OFFLINE |
-
-??? info "pve2 (2 users)"
-    | Username | UID | Shell | Sudo | Empty Password | Online |
-    |----------|-----|-------|------|----------------|--------|
-    | ceph | 64045 | /usr/sbin/nologin | NO | OK | OFFLINE |
-    | cos | 1000 | /bin/bash | YES | OK | ONLINE |
 
 ??? info "plow-rpm (2 users)"
     | Username | UID | Shell | Sudo | Empty Password | Online |
@@ -100,12 +94,6 @@ _Last updated: 2026-04-12 02:00 AM EDT_
 ??? info "2404HV-deb (1 users)"
     | Username | UID | Shell | Sudo | Empty Password | Online |
     |----------|-----|-------|------|----------------|--------|
-    | cos | 1000 | /bin/bash | YES | OK | ONLINE |
-
-??? info "proxmox-deb (2 users)"
-    | Username | UID | Shell | Sudo | Empty Password | Online |
-    |----------|-----|-------|------|----------------|--------|
-    | ceph | 64045 | /usr/sbin/nologin | NO | OK | OFFLINE |
     | cos | 1000 | /bin/bash | YES | OK | ONLINE |
 
 ??? info "pihole-book-deb (1 users)"

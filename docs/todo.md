@@ -1,10 +1,19 @@
 # Homelab Todo & Roadmap
-_Last updated: 2026-04-10_
+_Last updated: 2026-04-12_
 
 ---
 
 ## Critical / Security
 - [ ] FreeNAS 2019 → TrueNAS Community Edition — EOL OS on 45TB of data
+- [ ] **Deploy Zabbix** — proactive monitoring before failures hit
+  - [ ] Zabbix server — deploy on Proxmox VM or docker-deb
+  - [ ] Zabbix agent on every managed Linux host
+  - [ ] ZFS plugin — monitor RAIDZ1 health, drive errors on FreeNAS ⚠️
+  - [ ] Disk space alerts — eld D: (10%), amontillado D: (11%), pi1 SD (91%) ⚠️
+  - [ ] RAM/CPU/temperature monitoring fleet-wide
+  - [ ] Service health checks — mediastack containers, Plex jails
+  - [ ] **Telegram alerts** — bot notifications when something looks wrong
+  - [ ] Alert on: drive errors, disk >85%, service down, high temp, RAM pressure
 ### Backup Strategy (eld)
 - [ ] Migrate eld to Ubuntu 26.04
 - [ ] Deploy Restic — automated backups from FreeNAS (Tier 1)
@@ -17,9 +26,29 @@ _Last updated: 2026-04-10_
 ---
 
 ## In Progress
-- [ ] Inventory 6 waiting systems — match hardware to roles
+- [ ] Inventory 5 remaining waiting systems — match hardware to roles
+- [ ] Inventory pve3 (ThinkStation offsite) — specs, storage, role
 - [ ] Complete IP renumbering (Rocky/Alma/RHEL .51-.53 → .80-.82, Pis, TVs etc.)
 - [ ] Remove alea_iacta_est (plex-plexpass_2) jail from FreeNAS — experimental, not needed
+- [ ] Purchase Hologram.io SIM for argos-deb LTE
+- [ ] Purchase larger SD card for pi1-deb (3.8GB, 91% full)
+- [ ] Evaluate LambdaLabs workstation — potential multi-GPU AI node
+- [ ] Deploy Gitea as Docker container — not dedicated Pi
+- [ ] Pi rack — 3D print or buy, house all 8 Pis cleanly
+- [ ] PoE switch + PoE HATs — single cable per Pi for power + network
+
+### Hardware Inventory Completion
+- [ ] Photo and dmidecode all 5 waiting systems
+- [ ] Photo pve2 (Dell OptiPlex 7050)
+- [ ] Photo pve3 (ThinkStation offsite)
+- [ ] Photo Elegoo Mars 3 resin printer
+- [ ] Photo Creality Ender 3 V1
+- [ ] Photo Flashforge Dreamer
+- [ ] Photo GTX 1080 and GTX 1080 Ti cards
+- [ ] Photo all laptops
+- [ ] SCP all new photos to MkDocs docs/images/hw/
+- [ ] Import all hardware into Snipe-IT (192.168.1.20)
+- [ ] Push completed hw_inventory.md to MkDocs
 
 ---
 
@@ -71,22 +100,65 @@ _Last updated: 2026-04-10_
 
 ### argos-deb (ewaste RPi 4 IoT station)
 - [x] Flash Bookworm 64-bit, onboard via Ansible ✅ 2026-04-12
-- [x] Set DHCP reservation → .127 ✅ 2026-04-12
+- [x] Set DHCP reservation → .127 (ethernet) ✅ 2026-04-12
 - [x] Verify 7" touchscreen works on Bookworm ✅ works out of the box
+- [x] Set DHCP reservation for argos WiFi MAC (dc:a6:32:4c:94:8f) → .128 ✅ 2026-04-12
+- [ ] Wall mount argos — picture frame design, right angle USB-C for power
+- [ ] Print picture frame surround on Ender 3 V2 — search Printables for RPi 7" frame designs
+- [ ] Deploy HA kiosk dashboard on argos touchscreen
 - [ ] Test RPi Camera V2.1
 - [ ] Research Sixfab EC25-A 4G LTE setup — needs SIM card (Hologram.io recommended)
 - [ ] Research Adafruit RFM9x LoRa setup — potential LoRa gateway for long range sensors
 - [ ] Decide role — mobile node, HA kiosk, camera, LoRa gateway, or all of the above
 - [ ] Home Assistant — already running on ha-net (192.168.1.125) ✅
 - [ ] Configure HA backups — currently none configured ⚠️
-- [ ] Disable WiFi on ha-net — use ethernet only (currently both active)
+- [ ] Disable WiFi on ha-net — defer until HA is fully configured
 - [x] Set DHCP reservation for ha-net ethernet MAC (e4:5f:01:65:56:ee) → .125 ✅ 2026-04-12
 - [ ] Explore Ansible URI module to manage HA via REST API
 - [ ] Install ESPHome add-on — for flashing/managing ESP8266/ESP32 IoT devices
 - [ ] Install Music Assistant add-on — integrates with Plex/media stack
-- [ ] Document installed add-ons and backup situation
 - [ ] Connect smart home devices to HA
-- [ ] Decide host for Zigbee/Z-Wave coordinator (pi2 candidate)
+- [ ] Decide host for Zigbee/Z-Wave coordinator (pi4-deb candidate)
+
+### Home Assistant — Full Setup Project
+- [ ] Phase 1 — Foundation: backup to FreeNAS share, Tailscale (WiFi disable deferred)
+- [ ] Phase 2 — Integrations: Zigbee coordinator (pi4-deb + USB dongle), MQTT broker (pi2-deb + Mosquitto), ESPHome, Frigate NVR (argos-deb camera)
+- [ ] Phase 3 — Automations: lighting, presence detection, OctoPrint integration, Music Assistant + Plex
+- [ ] Phase 4 — Display: argos-deb wall mounted kiosk dashboard
+
+### pve2 (Dell OptiPlex 7050)
+- [x] Fix Proxmox enterprise repo — disable ceph/enterprise, add pve-no-subscription repo ✅ 2026-04-12
+- [ ] Decide role — GPU node, k8s, Immich, or join proxmox-deb cluster
+- [ ] Check PCIe slot availability for GPU — SFF case may limit options
+- [ ] Upgrade RAM to 64GB DDR4 if needed for role
+- [ ] Set static IP or DHCP reservation at .7
+- [ ] Join Proxmox cluster with proxmox-deb and pve3 (ThinkStation)
+
+### Proxmox Cluster
+- [x] Build 2-node wheel cluster — shardik + maturin ✅ 2026-04-12
+- [x] QDevice on git-ansible ✅ 2026-04-12
+- [ ] Add pve3 (ThinkStation) to cluster when available — proper 3-node quorum
+- [ ] Set up shared storage — NFS from FreeNAS or ZFS_SDBC via NFS to maturin
+- [ ] Configure Proxmox HA for automatic VM failover
+- [ ] Add maturin and shardik to [proxmox] group in inventory_auto
+- [ ] Create Ubuntu 24.04 template on maturin
+- [ ] Onboard shardik and maturin properly via Ansible
+- [ ] Fix AllowUsers on shardik and git-ansible — remove root, keep cos only
+- [ ] Remove ZeroTier from amontillado-win
+- [ ] Add urnst-deb photo to hw_inventory
+- [ ] Inventory 4 remaining unknown waiting systems
+- [ ] Decide urnst-deb role — Proxmox node 3 or PBS
+- [ ] Add Beryl AX as wired AP — run cable, configure as AP
+- [ ] MkDocs — dockerize, add to Traefik, expose publicly
+- [ ] Authelia — add auth layer in front of exposed services
+- [ ] Zabbix + Telegram alerts — CRITICAL, monitoring before next failure
+
+### Homelab Rebrand (The Dark Tower theme)
+- [ ] Map all hosts to Dark Tower names — Tower + 6 Beams + Guardians
+- [ ] Write Ansible playbook to rename fleet — hostname, /etc/hosts, inventory
+- [ ] Change cos passwords fleet-wide
+- [ ] Update DHCP reservations with new hostnames
+- [ ] Update MkDocs documentation with new names
 
 ### Secrets & Identity
 - [ ] Vaultwarden (Bitwarden) — self-hosted password manager
@@ -124,6 +196,10 @@ _Last updated: 2026-04-10_
 - [ ] DDNS-Updater — if exposing services externally
 
 ### Documentation
+- [ ] Verify network diagram rendering in MkDocs — check Mermaid/PlantUML plugin
+- [ ] Create UML network diagram — all hosts, IPs, connections, VLANs
+- [ ] Create Proxmox cluster diagram — VMs, LXCs, storage
+- [ ] Create Pi fleet diagram — all 8 Pis, roles, connections
 - [ ] Expand MkDocs site with Ansible playbook docs
 - [ ] Document Docker Swarm setup
 - [ ] Document Proxmox VM/LXC layout
@@ -187,15 +263,17 @@ _Last updated: 2026-04-10_
 - [x] ~~Remove overseerr config dir (replaced by seerr)~~ ✅ 2026-04-10
 - [ ] Update fail2ban.yml — add pause before verify task (timing fix)
 - [ ] Clarify MariaDB and nginx role on git-ansible-deb
-- [ ] Create docs/images/hw/ directory in MkDocs project
-- [ ] Save proxmox-deb photo to docs/images/hw/proxmox-deb.jpg — photo taken
+- [x] ~~Create docs/images/hw/ directory in MkDocs project~~ ✅ 2026-04-12
+- [x] ~~Save proxmox-deb photo to docs/images/hw/proxmox-deb.jpg~~ ✅ 2026-04-12
 - [ ] Confirm git-ansible physical host specs with dmidecode
-- [ ] Run Get-ComputerInfo on eld-win for hardware inventory
-- [ ] Inventory offsite ThinkStation Proxmox node — specs, storage, role
-- [ ] Add ThinkStation to Tailscale
-- [ ] Add ThinkStation to Ansible inventory
-- [ ] Take photos of all remaining hosts
+- [x] ~~Run Get-ComputerInfo on eld-win for hardware inventory~~ ✅ 2026-04-12
+- [ ] Inventory offsite ThinkStation (pve3) — specs, storage, role
+- [ ] Add pve3 to Tailscale
+- [ ] Add pve3 to Ansible inventory
+- [ ] Take photos of waiting systems and 3D printers
 - [ ] Import all hardware into Snipe-IT (192.168.1.20)
+- [x] ~~Fix pve2 Proxmox enterprise repo~~ ✅ 2026-04-12
+- [x] ~~pve2 onboarded~~ ✅ 2026-04-12
 
 ---
 
@@ -217,8 +295,8 @@ _Last updated: 2026-04-10_
 - [x] git-ansible-deb passwordless sudo configured — 2026-04-10
 - [x] mediastack-deb onboarded and SSH hardened — 2026-04-10
 - [x] fail2ban playbook cleaned up (batocera/git-ansible excluded) — 2026-04-10
-- [x] FreeNAS hardware fully inventoried — BIOS, mobo, RAM, ZFS pool topology — 2026-04-12
-- [x] eld-win hardware fully inventoried — mobo, CPU, RAM, storage — 2026-04-12
+- [x] FreeNAS hardware fully inventoried — 2026-04-12
+- [x] eld-win hardware fully inventoried — 2026-04-12
 - [x] amontillado-win hardware fully inventoried — 2026-04-12
 - [x] Hardware inventory MkDocs page live with photos — 2026-04-12
 - [x] pi1-deb onboarded (Raspbian Bookworm, .120) — 2026-04-12
@@ -228,11 +306,27 @@ _Last updated: 2026-04-10_
 - [x] ha-net documented (HAOS 17.2, RPi 4, .125) — 2026-04-12
 - [x] inventory_auto cleaned — duplicates removed, legacy group added — 2026-04-12
 - [x] onboard_host.yml fixed — hostname fallback, SSH ignore_errors, duplicate entry fix — 2026-04-12
-- [x] 8 Pis identified, photographed, and documented — 2026-04-12
-- [x] argos-deb named — hundred-eyed giant, ewaste RPi 4 with LTE/LoRa/camera/touchscreen — 2026-04-12
+- [x] 8 Pis + argos identified, photographed, and documented — 2026-04-12
+- [x] proxmox-deb renamed to shardik — 2026-04-12 (the hard way 😅)
+- [x] pve2 renamed to maturin — 2026-04-12
+- [x] wheel cluster created — shardik + maturin — 2026-04-12
+- [x] QDevice configured on git-ansible — 2026-04-12
+- [x] Live VM/LXC migration working between nodes — 2026-04-12
+- [x] Ubuntu 24.04 ISO downloaded on maturin — 2026-04-12
+- [x] Traefik deployed on docker-deb with DuckDNS + Let's Encrypt — 2026-04-13
+- [x] Vaultwarden deployed behind Traefik with valid HTTPS cert — 2026-04-13
+- [x] oerth.duckdns.org DDNS configured on git-ansible (cron every 5min) — 2026-04-13
+- [x] Port forwarding 80/443 → docker-deb configured on Flint 2 — 2026-04-13
+- [x] Passwords migrated off Google to self-hosted Vaultwarden — 2026-04-13
+- [x] urnst-deb inventoried and onboarded — Ryzen 5 1600X, 8GB DDR4, 3x 2.7TB — 2026-04-13
+- [x] ctrl-alt-del disabled on shardik and maturin — 2026-04-13
+- [x] fail2ban ignoreip whitelist fixed on git-ansible (192.168.1.0/24) — 2026-04-13
+- [x] ZeroTier removal from amontillado — todo
+- [x] DHCP reservation set for argos WiFi (.128) — 2026-04-13
 
 ---
 
 ## Package Baseline (managed by onboard_host.yml)
 tmux, plocate, screen, cifs-utils, tree, vim, inxi, screenfetch,
 curl, wget, git, htop, net-tools, unzip, apt-utils
+

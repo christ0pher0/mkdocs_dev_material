@@ -1,6 +1,6 @@
 # Network Diagram
 
-_Last update: 2026-04-12 02:10:01_
+_Last update: 2026-04-14 08:10:01_
 
 ```mermaid
 graph LR
@@ -17,8 +17,6 @@ graph LR
     GRP_linux[Linux]
     Switch --> GRP_linux
 
-    proxmox_deb["proxmox-deb<br/>192.168.1.2<br/>Linux"]
-    GRP_linux --> proxmox_deb
     git_ansible_deb["git-ansible-deb<br/>192.168.1.3<br/>Linux"]
     GRP_linux --> git_ansible_deb
     snipeit_deb["snipeit-deb<br/>192.168.1.20<br/>Linux"]
@@ -35,6 +33,10 @@ graph LR
     GRP_linux --> ubuntu_ansible_deb
     kasm_2404_deb["kasm-2404-deb<br/>192.168.1.26<br/>Linux"]
     GRP_linux --> kasm_2404_deb
+    urnst_deb["urnst-deb<br/>192.168.1.27<br/>Linux"]
+    GRP_linux --> urnst_deb
+    idee_deb["idee-deb<br/>192.168.1.28<br/>Linux"]
+    GRP_linux --> idee_deb
     apache_deb["apache-deb<br/>192.168.1.32<br/>Linux"]
     GRP_linux --> apache_deb
     pihole_book_deb["pihole-book-deb<br/>192.168.1.33<br/>Linux"]
@@ -43,8 +45,6 @@ graph LR
     GRP_linux --> docker_deb
     2404HV_deb["2404HV-deb<br/>192.168.1.35<br/>Linux"]
     GRP_linux --> 2404HV_deb
-    mediastack_deb["mediastack-deb<br/>192.168.1.36<br/>Linux"]
-    GRP_linux --> mediastack_deb
     mediastack_deb["mediastack-deb<br/>192.168.1.36<br/>Linux"]
     GRP_linux --> mediastack_deb
     rocky_rpm["rocky-rpm<br/>192.168.1.51<br/>Linux"]
@@ -61,20 +61,12 @@ graph LR
     GRP_linux --> octopi_deb
     batocera_deb["batocera-deb<br/>192.168.1.123<br/>Linux"]
     GRP_linux --> batocera_deb
-    pi2_deb["pi2-deb<br/>192.168.1.124<br/>Linux"]
-    GRP_linux --> pi2_deb
     pi3_deb["pi3-deb<br/>192.168.1.124<br/>Linux"]
     GRP_linux --> pi3_deb
     pi4_deb["pi4-deb<br/>192.168.1.126<br/>Linux"]
     GRP_linux --> pi4_deb
     argos_deb["argos-deb<br/>192.168.1.127<br/>Linux"]
     GRP_linux --> argos_deb
-    pi4_deb["pi4-deb<br/>192.168.1.209<br/>Linux"]
-    GRP_linux --> pi4_deb
-    pi1_deb["pi1-deb<br/>192.168.1.120<br/>Linux"]
-    GRP_linux --> pi1_deb
-    pi2_deb["pi2-deb<br/>192.168.1.121<br/>Linux"]
-    GRP_linux --> pi2_deb
 
     GRP_windows[Windows]
     Switch --> GRP_windows
@@ -143,8 +135,6 @@ graph LR
     GRP_debian[Debian]
     Switch --> GRP_debian
 
-    proxmox_deb["proxmox-deb<br/>192.168.1.2<br/>Debian"]
-    GRP_debian --> proxmox_deb
     git_ansible_deb["git-ansible-deb<br/>192.168.1.3<br/>Debian"]
     GRP_debian --> git_ansible_deb
     snipeit_deb["snipeit-deb<br/>192.168.1.20<br/>Debian"]
@@ -161,6 +151,10 @@ graph LR
     GRP_debian --> ubuntu_ansible_deb
     kasm_2404_deb["kasm-2404-deb<br/>192.168.1.26<br/>Debian"]
     GRP_debian --> kasm_2404_deb
+    urnst_deb["urnst-deb<br/>192.168.1.27<br/>Debian"]
+    GRP_debian --> urnst_deb
+    idee_deb["idee-deb<br/>192.168.1.28<br/>Debian"]
+    GRP_debian --> idee_deb
     apache_deb["apache-deb<br/>192.168.1.32<br/>Debian"]
     GRP_debian --> apache_deb
     pihole_book_deb["pihole-book-deb<br/>192.168.1.33<br/>Debian"]
@@ -171,8 +165,6 @@ graph LR
     GRP_debian --> 2404HV_deb
     mediastack_deb["mediastack-deb<br/>192.168.1.36<br/>Debian"]
     GRP_debian --> mediastack_deb
-    mediastack_deb["mediastack-deb<br/>192.168.1.36<br/>Debian"]
-    GRP_debian --> mediastack_deb
     pi1_deb["pi1-deb<br/>192.168.1.120<br/>Debian"]
     GRP_debian --> pi1_deb
     pi2_deb["pi2-deb<br/>192.168.1.121<br/>Debian"]
@@ -181,18 +173,12 @@ graph LR
     GRP_debian --> octopi_deb
     batocera_deb["batocera-deb<br/>192.168.1.123<br/>Debian"]
     GRP_debian --> batocera_deb
-    pi2_deb["pi2-deb<br/>192.168.1.124<br/>Debian"]
-    GRP_debian --> pi2_deb
     pi3_deb["pi3-deb<br/>192.168.1.124<br/>Debian"]
     GRP_debian --> pi3_deb
     pi4_deb["pi4-deb<br/>192.168.1.126<br/>Debian"]
     GRP_debian --> pi4_deb
     argos_deb["argos-deb<br/>192.168.1.127<br/>Debian"]
     GRP_debian --> argos_deb
-    pi4_deb["pi4-deb<br/>192.168.1.209<br/>Debian"]
-    GRP_debian --> pi4_deb
-    pi2_deb["pi2-deb<br/>192168.1.121<br/>Debian"]
-    GRP_debian --> pi2_deb
 
     GRP_redhat[Redhat]
     Switch --> GRP_redhat
@@ -203,6 +189,14 @@ graph LR
     GRP_redhat --> alma_rpm
     plow_rpm["plow-rpm<br/>192.168.1.53<br/>Redhat"]
     GRP_redhat --> plow_rpm
+
+    GRP_proxmox[Proxmox]
+    Switch --> GRP_proxmox
+
+    shardik["shardik<br/>192.168.1.2<br/>Proxmox"]
+    GRP_proxmox --> shardik
+    maturin["maturin<br/>192.168.1.7<br/>Proxmox"]
+    GRP_proxmox --> maturin
 
     GRP_control[Control]
     Switch --> GRP_control
@@ -220,7 +214,6 @@ graph LR
 
     class ONT,Router,Firewall,Switch infra
     class GRP_linux group
-    class proxmox_deb linux
     class git_ansible_deb linux
     class snipeit_deb linux
     class grafana_docker_deb linux
@@ -229,11 +222,12 @@ graph LR
     class swarm03_deb linux
     class ubuntu_ansible_deb linux
     class kasm_2404_deb linux
+    class urnst_deb linux
+    class idee_deb linux
     class apache_deb linux
     class pihole_book_deb linux
     class docker_deb linux
     class 2404HV_deb linux
-    class mediastack_deb linux
     class mediastack_deb linux
     class rocky_rpm linux
     class alma_rpm linux
@@ -242,13 +236,9 @@ graph LR
     class pi2_deb linux
     class octopi_deb linux
     class batocera_deb linux
-    class pi2_deb linux
     class pi3_deb linux
     class pi4_deb linux
     class argos_deb linux
-    class pi4_deb linux
-    class pi1_deb linux
-    class pi2_deb linux
     class GRP_windows group
     class amontillado_win windows
     class eld_win windows
@@ -276,7 +266,6 @@ graph LR
     class GRP_mac group
     class tahoe_mac other
     class GRP_debian group
-    class proxmox_deb other
     class git_ansible_deb other
     class snipeit_deb other
     class grafana_docker_deb other
@@ -285,26 +274,27 @@ graph LR
     class swarm03_deb other
     class ubuntu_ansible_deb other
     class kasm_2404_deb other
+    class urnst_deb other
+    class idee_deb other
     class apache_deb other
     class pihole_book_deb other
     class docker_deb other
     class 2404HV_deb other
     class mediastack_deb other
-    class mediastack_deb other
     class pi1_deb other
     class pi2_deb other
     class octopi_deb other
     class batocera_deb other
-    class pi2_deb other
     class pi3_deb other
     class pi4_deb other
     class argos_deb other
-    class pi4_deb other
-    class pi2_deb other
     class GRP_redhat group
     class rocky_rpm other
     class alma_rpm other
     class plow_rpm other
+    class GRP_proxmox group
+    class shardik other
+    class maturin other
     class GRP_control group
     class git_ansible_deb linux
 ```

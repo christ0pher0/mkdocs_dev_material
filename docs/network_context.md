@@ -9,7 +9,7 @@ _Last updated: 2026-04-09_
 - **ISP:** FIOS (fiber ONT)
 - **Router/Firewall:** GL.iNet Flint 2 (192.168.1.1) — OpenWrt-based, AdGuard Home enabled
 - **Secondary firewall:** Netgate (192.168.1.6) — pfSense
-- **Hypervisor:** Proxmox VE (192.168.1.2) — AMD Ryzen 5 1600, 23GB RAM
+- **Hypervisor:** Proxmox VE (192.168.1.2) — AMD Ryzen 5 1600, 56GB RAM (ASRock AB350M Pro4)
 - **NAS:** FreeNAS 2019 (192.168.1.5) — 70TB pool, CIFS shares
 - **Subnet:** 192.168.1.0/24
 - **DNS:** AdGuard Home on router + PiHole (192.168.1.33)
@@ -58,6 +58,7 @@ _Last updated: 2026-04-09_
 | 192.168.1.24 | swarm03-deb        | Ubuntu 24.04 | KVM   | Docker Swarm worker                         | Online |
 | 192.168.1.25 | ubuntu-ansible-deb | Ubuntu 24.04 | KVM   | Ubuntu Ansible host (GUI)                   | Online |
 | 192.168.1.26 | kasm-2404-deb      | Ubuntu 24.04 | KVM   | Kasm Workspaces                             | Online |
+| 192.168.1.27 | urnst-deb          | Debian 13    | Physical | Ryzen 5 1600X — role TBD (Proxmox node 3 / PBS candidate) | Online |
 | 192.168.1.32 | apache-deb         | Ubuntu 22.04 | LXC   | Apache web server                           | Online |
 | 192.168.1.33 | pihole-book-deb    | Debian 12    | LXC   | Pi-hole DNS (1 core, 512MB RAM)             | Online |
 | 192.168.1.34 | docker-deb         | Ubuntu 24.04 | KVM   | Docker host                                 | Online |
@@ -128,7 +129,9 @@ _Last updated: 2026-04-09_
 
 ## Proxmox Host Detail (192.168.1.2)
 
-**Hardware:** AMD Ryzen 5 1600 (6c/12t) | **RAM:** 23GB (81% used — tight)
+**Hardware:** AMD Ryzen 5 1600 (6c/12t) | **RAM:** 56GB DDR4 2667 (4x DIMM: 16+16+16+8GB mixed)
+**Motherboard:** ASRock AB350M Pro4 | Serial: M80-B1011000766
+**BIOS:** AMI P10.43, updated 2025-06-24
 **Kernel:** 6.8.12-20-pve
 
 ### Storage Pools
@@ -172,7 +175,7 @@ _Last updated: 2026-04-09_
 ## mediastack-deb Detail (192.168.1.36)
 
 Proxmox VM 112 | Ubuntu 24.04 | 4 cores | 4GB RAM
-**⚠️ Root disk 91% CRITICAL** | Tailscale: 100.127.236.79
+**⚠️ Root disk — expanded to 164GB, 17% used** | Tailscale: 100.127.236.79
 
 ### Docker Containers
 
@@ -197,7 +200,7 @@ NAS CIFS mounts at `/mnt/plex/*`: Music420, Movies, Comics, AudioBooksPlex, Read
 
 ## git-ansible-deb Detail (192.168.1.3)
 
-Ubuntu 24.04 | Disk: 63GB, 35% used | No Tailscale
+Ubuntu 24.04 | Disk: 63GB, 35% used | Tailscale: 100.68.195.68
 Ansible core 2.20.4 | Python 3.12.3
 Services: MkDocs :8000, nginx :80, MariaDB :3306 (localhost)
 Docs: `/home/cos/material/mkdocs_dev_material/docs/`
@@ -207,7 +210,7 @@ VS Code Server installed
 
 ## Tailscale Nodes
 
-| Hostname               | Tailscale IP   | OS      | Status  |
+| git-ansible            | 100.68.195.68  | Linux   | Online  |
 |------------------------|----------------|---------|---------|
 | mediastack-deb         | 100.127.236.79 | Linux   | Online  |
 | amontillado            | 100.126.7.50   | Windows | Online  |
@@ -238,15 +241,33 @@ All nodes have Ceph user — storage cluster likely configured
 
 ## Known Issues / To Do
 
-- [ ] **CRITICAL:** mediastack-deb root disk at 91% — expand or clean
-- [ ] **CRITICAL:** batocera-deb /overlay/base at 100%
-- [ ] Fix frodo empty password on rocky-rpm, alma-rpm, plow-rpm
-- [ ] Install fail2ban on mediastack-deb, docker-deb, grafana-docker-deb, pihole-book-deb
-- [ ] Fix chrony on snipeit-deb and pihole-book-deb
-- [ ] Add Tailscale to git-ansible-deb
-- [ ] Complete pending IP renumbering
-- [ ] FreeNAS → TrueNAS Community Edition migration
+### Critical
+- [x] ~~mediastack-deb root disk at 91% — expand VM disk or clean up Docker~~ ✅ 2026-04-09 — expanded to 164GB, now at 17% (127GB free)
+- [x] ~~batocera-deb /overlay/base at 100%~~ ✅ 2026-04-09 — false alarm, this is the read-only Batocera OS squashfs image, expected behavior
+
+### In Progress
+- [x] ~~docker-deb — broken packages (udev/libudev1 mismatch)~~ ✅ 2026-04-09
+- [ ] plow-rpm — xrdp/SELinux conflict blocking updates — decide: exclude xrdp or remove it
+- [x] ~~git-ansible-deb — cannot sudo via Ansible~~ ✅ 2026-04-10 — passwordless sudo configured
+
+### Security
+- [x] ~~frodo user deleted from rocky-rpm, alma-rpm, plow-rpm~~ ✅ 2026-04-09
+- [x] ~~fail2ban installed on mediastack-deb~~ ✅ 2026-04-09
+- [x] ~~fail2ban — docker-deb still missing (blocked by broken packages)~~ ✅ 2026-04-09
+- [x] ~~fail2ban — update whitelist from 192.168.1.100 to 192.168.1.0/24~~ ✅ 2026-04-09
+- [x] ~~fail2ban — exclude batocera-deb in playbook~~ ✅ 2026-04-09
+- [x] ~~fail2ban — exclude git-ansible-deb in playbook~~ ✅ 2026-04-09
+- [x] ~~Fix chrony on snipeit-deb and pihole-book-deb~~ ✅ 2026-04-09 — disabled in LXC containers, time sync handled by Proxmox host
+- [x] ~~Add Tailscale to git-ansible-deb~~ ✅ 2026-04-10 (100.68.195.68)
+
+### Maintenance
+- [x] ~~Most hosts updated via update_reboot_linux.yml~~ ✅ 2026-04-09
+- [ ] Complete pending IP renumbering (Rocky/Alma/RHEL .51-.53 → .80-.82, Pis, TVs etc.)
+- [ ] Fix duplicate mediastack-deb entry in inventory_auto
 - [ ] Investigate pi1-deb and pi2-deb unreachable
+
+### Long Term
+- [ ] FreeNAS → TrueNAS Community Edition migration
 - [ ] Clarify role of MariaDB and nginx on git-ansible-deb
 
 ---
