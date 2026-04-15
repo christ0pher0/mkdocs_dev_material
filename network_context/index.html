@@ -1,0 +1,2613 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://192.168.1.3/network_context/">
+      
+      
+        <link rel="prev" href="../network-schema/">
+      
+      
+        <link rel="next" href="../hw_inv/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Network Context - Homelab</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,300i,400,400i,700,700i%7CRed+Hat+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Merriweather Sans";--md-code-font:"Red Hat Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#network-context-document" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Homelab" class="md-header__button md-logo" aria-label="Homelab" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M224 96a160 160 0 1 0 0 320 160 160 0 1 0 0-320m224 160a224 224 0 1 1-448 0 224 224 0 1 1 448 0"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Homelab
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Network Context
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="deep-purple"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="deep-orange"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Homelab" class="md-nav__button md-logo" aria-label="Homelab" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M224 96a160 160 0 1 0 0 320 160 160 0 1 0 0-320m224 160a224 224 0 1 1-448 0 224 224 0 1 1 448 0"/></svg>
+
+    </a>
+    Homelab
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../host/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Host
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hosts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hosts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scan_results/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scan Results
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../disk_space/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Disk Space
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system_info/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Info
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_audit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Audit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ping_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ping Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concerts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concerts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../homelab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Homelab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mdeiastack_apps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MediaStack Applications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apps_to_investigate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Apps to Investigate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code-examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git.commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Git Commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git_nfo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Git Info
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network_devices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network Devices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network_diagram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network Diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../todo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Todo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proxmox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proxmox
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network Schema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network Context
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network Context
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#network-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ip-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IP Schema
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full-host-inventory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Full Host Inventory
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Full Host Inventory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#infrastructure-119" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Infrastructure (1–19)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debianubuntu-servers-2049-mostly-proxmox-vmslxcs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debian/Ubuntu Servers (20–49) — mostly Proxmox VMs/LXCs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rpm-servers-5069-pending-renumber-to-8082" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RPM Servers (50–69) — pending renumber to 80–82
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-workstations-100119" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Windows Workstations (100–119)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raspberry-pis-120139" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Raspberry Pis (120–139)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tvs-media-plex-140159" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TVs / Media / Plex (140–159)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#peripherals-iot-160179" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Peripherals / IoT (160–179)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mobile-android-200249" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mobile / Android (200–249)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#special-virtual-250" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Special / Virtual (250+)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proxmox-host-detail-19216812" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Proxmox Host Detail (192.168.1.2)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Proxmox Host Detail (192.168.1.2)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#storage-pools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Storage Pools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VMs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lxc-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LXC Containers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mediastack-deb-detail-192168136" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mediastack-deb Detail (192.168.1.36)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="mediastack-deb Detail (192.168.1.36)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Docker Containers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-ansible-deb-detail-19216813" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        git-ansible-deb Detail (192.168.1.3)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tailscale-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tailscale Nodes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-swarm-2224-vip-250" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Docker Swarm (.22–.24, VIP .250)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-flags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Flags
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-issues-to-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Known Issues / To Do
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Known Issues / To Do">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#critical" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critical
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-progress" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        In Progress
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maintenance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#long-term" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Long Term
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hw_inv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware Inventory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker_inv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker Inventory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#network-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ip-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IP Schema
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full-host-inventory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Full Host Inventory
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Full Host Inventory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#infrastructure-119" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Infrastructure (1–19)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debianubuntu-servers-2049-mostly-proxmox-vmslxcs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debian/Ubuntu Servers (20–49) — mostly Proxmox VMs/LXCs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rpm-servers-5069-pending-renumber-to-8082" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RPM Servers (50–69) — pending renumber to 80–82
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-workstations-100119" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Windows Workstations (100–119)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raspberry-pis-120139" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Raspberry Pis (120–139)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tvs-media-plex-140159" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TVs / Media / Plex (140–159)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#peripherals-iot-160179" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Peripherals / IoT (160–179)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mobile-android-200249" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mobile / Android (200–249)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#special-virtual-250" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Special / Virtual (250+)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proxmox-host-detail-19216812" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Proxmox Host Detail (192.168.1.2)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Proxmox Host Detail (192.168.1.2)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#storage-pools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Storage Pools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VMs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lxc-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LXC Containers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mediastack-deb-detail-192168136" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mediastack-deb Detail (192.168.1.36)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="mediastack-deb Detail (192.168.1.36)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Docker Containers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-ansible-deb-detail-19216813" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        git-ansible-deb Detail (192.168.1.3)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tailscale-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tailscale Nodes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-swarm-2224-vip-250" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Docker Swarm (.22–.24, VIP .250)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-flags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Flags
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-issues-to-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Known Issues / To Do
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Known Issues / To Do">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#critical" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critical
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-progress" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        In Progress
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maintenance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#long-term" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Long Term
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="network-context-document">Network Context Document</h1>
+<p><em>Paste this at the start of any new Claude session.</em>
+<em>Last updated: 2026-04-09</em></p>
+<hr />
+<h2 id="network-overview">Network Overview</h2>
+<ul>
+<li><strong>ISP:</strong> FIOS (fiber ONT)</li>
+<li><strong>Router/Firewall:</strong> GL.iNet Flint 2 (192.168.1.1) — OpenWrt-based, AdGuard Home enabled</li>
+<li><strong>Secondary firewall:</strong> Netgate (192.168.1.6) — pfSense</li>
+<li><strong>Hypervisor:</strong> Proxmox VE (192.168.1.2) — AMD Ryzen 5 1600, 56GB RAM (ASRock AB350M Pro4)</li>
+<li><strong>NAS:</strong> FreeNAS 2019 (192.168.1.5) — 70TB pool, CIFS shares</li>
+<li><strong>Subnet:</strong> 192.168.1.0/24</li>
+<li><strong>DNS:</strong> AdGuard Home on router + PiHole (192.168.1.33)</li>
+<li><strong>Monitoring:</strong> Grafana + Prometheus + node-exporter on 192.168.1.21</li>
+<li><strong>Ansible control node:</strong> git-ansible-deb (192.168.1.3)</li>
+<li><strong>Tailscale tailnet:</strong> coshaughnessy@</li>
+</ul>
+<hr />
+<h2 id="ip-schema">IP Schema</h2>
+<table>
+<thead>
+<tr>
+<th>Range</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1–19</td>
+<td>Infrastructure (router, Proxmox, NAS, network gear)</td>
+</tr>
+<tr>
+<td>20–49</td>
+<td>Debian/Ubuntu servers, VMs, LXCs</td>
+</tr>
+<tr>
+<td>50–69</td>
+<td>RPM servers (Rocky, Alma, RHEL)</td>
+</tr>
+<tr>
+<td>100–119</td>
+<td>Windows workstations</td>
+</tr>
+<tr>
+<td>120–139</td>
+<td>Raspberry Pis</td>
+</tr>
+<tr>
+<td>140–159</td>
+<td>TVs, media devices, Plex jails</td>
+</tr>
+<tr>
+<td>160–179</td>
+<td>Peripherals, printers, IoT</td>
+</tr>
+<tr>
+<td>200–249</td>
+<td>Mobile, Android devices</td>
+</tr>
+<tr>
+<td>250+</td>
+<td>Special, reserved, virtual IPs</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="full-host-inventory">Full Host Inventory</h2>
+<h3 id="infrastructure-119">Infrastructure (1–19)</h3>
+<table>
+<thead>
+<tr>
+<th>IP</th>
+<th>Hostname</th>
+<th>OS/Type</th>
+<th>Role</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>192.168.1.1</td>
+<td>router-net</td>
+<td>GL.iNet Flint 2</td>
+<td>Router, AdGuard Home, WireGuard VPN</td>
+<td>Online</td>
+</tr>
+<tr>
+<td>192.168.1.2</td>
+<td>proxmox-deb</td>
+<td>Debian 12 (PVE)</td>
+<td>Proxmox VE hypervisor</td>
+<td>Online</td>
+</tr>
+<tr>
+<td>192.168.1.3</td>
+<td>git-ansible-deb</td>
+<td>Ubuntu 24.04</td>
+<td>Ansible control node, MkDocs, Git</td>
+<td>Online</td>
+</tr>
+<tr>
+<td>192.168.1.5</td>
+<td>freenas-bsd</td>
+<td>FreeNAS (2019)</td>
+<td>NAS — 70TB CIFS shares</td>
+<td>Online</td>
+</tr>
+<tr>
+<td>192.168.1.6</td>
+<td>netgate-net</td>
+<td>pfSense</td>
+<td>Secondary firewall/router</td>
+<td>Online</td>
+</tr>
+</tbody>
+</table>
+<h3 id="debianubuntu-servers-2049-mostly-proxmox-vmslxcs">Debian/Ubuntu Servers (20–49) — mostly Proxmox VMs/LXCs</h3>
+<table>
+<thead>
+<tr>
+<th>IP</th>
+<th>Hostname</th>
+<th>OS</th>
+<th>Virt</th>
+<th>Role</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>192.168.1.20</td>
+<td>snipeit-deb</td>
+<td>Debian 12</td>
+<td>LXC</td>
+<td>Snipe-IT asset management</td>
+<td>Online</td>
+</tr>
+<tr>
+<td>192.168.1.21</td>
+<td>grafana-docker-deb</td>
+<td>Ubuntu 24.04</td>
+<td>LXC</td>
+<td>Grafana, Prometheus, Portainer, PVE-exporter</td>
+<td>Online</td>
+</tr>
+<tr>
+<td>192.168.1.22</td>
+<td>swarm01-deb</td>
+<td>Ubuntu 24.04</td>
+<td>KVM</td>
+<td>Docker Swarm manager</td>
+<td>Online</td>
+</tr>
+<tr>
+<td>192.168.1.23</td>
+<td>swarm02-deb</td>
+<td>Ubuntu 24.04</td>
+<td>KVM</td>
+<td>Docker Swarm worker</td>
+<td>Online</td>
+</tr>
+<tr>
+<td>192.168.1.24</td>
+<td>swarm03-deb</td>
+<td>Ubuntu 24.04</td>
+<td>KVM</td>
+<td>Docker Swarm worker</td>
+<td>Online</td>
+</tr>
+<tr>
+<td>192.168.1.25</td>
+<td>ubuntu-ansible-deb</td>
+<td>Ubuntu 24.04</td>
+<td>KVM</td>
+<td>Ubuntu Ansible host (GUI)</td>
+<td>Online</td>
+</tr>
+<tr>
+<td>192.168.1.26</td>
+<td>kasm-2404-deb</td>
+<td>Ubuntu 24.04</td>
+<td>KVM</td>
+<td>Kasm Workspaces</td>
+<td>Online</td>
+</tr>
+<tr>
+<td>192.168.1.27</td>
+<td>urnst-deb</td>
+<td>Debian 13</td>
+<td>Physical</td>
+<td>Ryzen 5 1600X — role TBD (Proxmox node 3 / PBS candidate)</td>
+<td>Online</td>
+</tr>
+<tr>
+<td>192.168.1.32</td>
+<td>apache-deb</td>
+<td>Ubuntu 22.04</td>
+<td>LXC</td>
+<td>Apache web server</td>
+<td>Online</td>
+</tr>
+<tr>
+<td>192.168.1.33</td>
+<td>pihole-book-deb</td>
+<td>Debian 12</td>
+<td>LXC</td>
+<td>Pi-hole DNS (1 core, 512MB RAM)</td>
+<td>Online</td>
+</tr>
+<tr>
+<td>192.168.1.34</td>
+<td>docker-deb</td>
+<td>Ubuntu 24.04</td>
+<td>KVM</td>
+<td>Docker host</td>
+<td>Online</td>
+</tr>
+<tr>
+<td>192.168.1.35</td>
+<td>2404HV-deb</td>
+<td>Ubuntu 24.04</td>
+<td>HyperV</td>
+<td>Hyper-V Ubuntu VM (i7-13700K, 12 cores)</td>
+<td>Online</td>
+</tr>
+<tr>
+<td>192.168.1.36</td>
+<td>mediastack-deb</td>
+<td>Ubuntu 24.04</td>
+<td>KVM</td>
+<td>Media stack — 12 Docker containers</td>
+<td>Online</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rpm-servers-5069-pending-renumber-to-8082">RPM Servers (50–69) — pending renumber to 80–82</h3>
+<table>
+<thead>
+<tr>
+<th>IP (current)</th>
+<th>IP (new)</th>
+<th>Hostname</th>
+<th>OS</th>
+<th>Virt</th>
+<th>Role</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>192.168.1.51</td>
+<td>→ .80</td>
+<td>rocky-rpm</td>
+<td>Rocky 9.7</td>
+<td>KVM</td>
+<td>Rocky Linux test</td>
+<td>Online</td>
+</tr>
+<tr>
+<td>192.168.1.52</td>
+<td>→ .81</td>
+<td>alma-rpm</td>
+<td>AlmaLinux 9.7</td>
+<td>KVM</td>
+<td>AlmaLinux test</td>
+<td>Online</td>
+</tr>
+<tr>
+<td>192.168.1.53</td>
+<td>→ .82</td>
+<td>plow-rpm</td>
+<td>RHEL 9.6</td>
+<td>HyperV</td>
+<td>RHEL VM (i7-13700K)</td>
+<td>Online</td>
+</tr>
+</tbody>
+</table>
+<h3 id="windows-workstations-100119">Windows Workstations (100–119)</h3>
+<table>
+<thead>
+<tr>
+<th>IP</th>
+<th>Hostname</th>
+<th>Notes</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>192.168.1.100</td>
+<td>amontillado-win</td>
+<td>Main Windows 11 desktop</td>
+<td>Online</td>
+</tr>
+<tr>
+<td>192.168.1.101</td>
+<td>eld-win</td>
+<td>Windows workstation</td>
+<td>Online</td>
+</tr>
+<tr>
+<td>192.168.1.102</td>
+<td>replacements-win</td>
+<td>Windows workstation</td>
+<td>Unreachable</td>
+</tr>
+<tr>
+<td>192.168.1.103</td>
+<td>todash-win</td>
+<td>Windows workstation</td>
+<td>Online</td>
+</tr>
+<tr>
+<td>192.168.1.104</td>
+<td>work-win</td>
+<td>Work laptop</td>
+<td>Unreachable</td>
+</tr>
+<tr>
+<td>192.168.1.105</td>
+<td>fortunato-win</td>
+<td>Hyper-V Windows 11 VM</td>
+<td>Online</td>
+</tr>
+</tbody>
+</table>
+<h3 id="raspberry-pis-120139">Raspberry Pis (120–139)</h3>
+<table>
+<thead>
+<tr>
+<th>IP</th>
+<th>Hostname</th>
+<th>Notes</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>192.168.1.120</td>
+<td>pi1-deb</td>
+<td>Raspberry Pi (→ from .75)</td>
+<td>Unreachable</td>
+</tr>
+<tr>
+<td>192.168.1.121</td>
+<td>pi2-deb</td>
+<td>Raspberry Pi (→ from .124)</td>
+<td>Unreachable</td>
+</tr>
+<tr>
+<td>192.168.1.122</td>
+<td>octopi-deb</td>
+<td>OctoPrint 3D printer (RPi ARMv7)</td>
+<td>Online</td>
+</tr>
+<tr>
+<td>192.168.1.123</td>
+<td>batocera-deb</td>
+<td>Batocera retro gaming</td>
+<td>Online</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tvs-media-plex-140159">TVs / Media / Plex (140–159)</h3>
+<table>
+<thead>
+<tr>
+<th>IP</th>
+<th>Hostname</th>
+<th>Notes</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>192.168.1.140</td>
+<td>tv1-media</td>
+<td>TV</td>
+<td>Online</td>
+</tr>
+<tr>
+<td>192.168.1.141</td>
+<td>tv2-media</td>
+<td>TV</td>
+<td>Online</td>
+</tr>
+<tr>
+<td>192.168.1.142</td>
+<td>lg-tv-net</td>
+<td>LG WebOS TV (→ from .105)</td>
+<td>Unreachable</td>
+</tr>
+<tr>
+<td>192.168.1.143</td>
+<td>weltgeist-media</td>
+<td>Plex jail (FreeBSD/FreeNAS)</td>
+<td>Online</td>
+</tr>
+<tr>
+<td>192.168.1.144</td>
+<td>alea_iacta_est-media</td>
+<td>Plex jail (FreeBSD/FreeNAS)</td>
+<td>Online</td>
+</tr>
+<tr>
+<td>192.168.1.145</td>
+<td>firetv-droid</td>
+<td>Amazon Fire TV (→ from .214)</td>
+<td>Unreachable</td>
+</tr>
+</tbody>
+</table>
+<h3 id="peripherals-iot-160179">Peripherals / IoT (160–179)</h3>
+<table>
+<thead>
+<tr>
+<th>IP</th>
+<th>Hostname</th>
+<th>Notes</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>192.168.1.162</td>
+<td>dell-printer-net</td>
+<td>Dell 2155cdn Color MFP</td>
+<td>Unreachable</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mobile-android-200249">Mobile / Android (200–249)</h3>
+<table>
+<thead>
+<tr>
+<th>IP</th>
+<th>Hostname</th>
+<th>Notes</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>192.168.1.200</td>
+<td>alexa-droid</td>
+<td>Amazon Echo</td>
+<td>Unreachable</td>
+</tr>
+<tr>
+<td>192.168.1.201</td>
+<td>pixel8-droid</td>
+<td>Google Pixel 8</td>
+<td>Unreachable</td>
+</tr>
+<tr>
+<td>192.168.1.202</td>
+<td>fire-tablet-droid</td>
+<td>Amazon Fire Tablet</td>
+<td>Online</td>
+</tr>
+<tr>
+<td>192.168.1.203</td>
+<td>roomba-droid</td>
+<td>iRobot Roomba</td>
+<td>Unreachable</td>
+</tr>
+</tbody>
+</table>
+<h3 id="special-virtual-250">Special / Virtual (250+)</h3>
+<table>
+<thead>
+<tr>
+<th>IP</th>
+<th>Hostname</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>192.168.1.250</td>
+<td>swarm-shared-vip</td>
+<td>Docker Swarm shared VIP</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="proxmox-host-detail-19216812">Proxmox Host Detail (192.168.1.2)</h2>
+<p><strong>Hardware:</strong> AMD Ryzen 5 1600 (6c/12t) | <strong>RAM:</strong> 56GB DDR4 2667 (4x DIMM: 16+16+16+8GB mixed)
+<strong>Motherboard:</strong> ASRock AB350M Pro4 | Serial: M80-B1011000766
+<strong>BIOS:</strong> AMI P10.43, updated 2025-06-24
+<strong>Kernel:</strong> 6.8.12-20-pve</p>
+<h3 id="storage-pools">Storage Pools</h3>
+<table>
+<thead>
+<tr>
+<th>Pool</th>
+<th>Type</th>
+<th>Used</th>
+<th>Total</th>
+<th>Use%</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>local</td>
+<td>dir</td>
+<td>5.72GB</td>
+<td>93.93GB</td>
+<td>6%</td>
+</tr>
+<tr>
+<td>local-lvm</td>
+<td>lvmthin</td>
+<td>62.6GB</td>
+<td>816GB</td>
+<td>8%</td>
+</tr>
+<tr>
+<td>ZFS_SDBC</td>
+<td>zfspool</td>
+<td>228GB</td>
+<td>5456GB</td>
+<td>4%</td>
+</tr>
+<tr>
+<td>DIR_SDA</td>
+<td>dir</td>
+<td>208GB</td>
+<td>5544GB</td>
+<td>4%</td>
+</tr>
+<tr>
+<td>zfs-backups</td>
+<td>dir</td>
+<td>164GB</td>
+<td>5391GB</td>
+<td>3%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="vms">VMs</h3>
+<table>
+<thead>
+<tr>
+<th>VMID</th>
+<th>Name</th>
+<th>Status</th>
+<th>CPU</th>
+<th>RAM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>102</td>
+<td>swarm01-manager</td>
+<td>running</td>
+<td>4</td>
+<td>2GB</td>
+</tr>
+<tr>
+<td>103</td>
+<td>Replacements-11</td>
+<td>stopped</td>
+<td>4</td>
+<td>4GB</td>
+</tr>
+<tr>
+<td>104</td>
+<td>swarm02-worker</td>
+<td>running</td>
+<td>4</td>
+<td>2GB</td>
+</tr>
+<tr>
+<td>105</td>
+<td>swarm03-worker</td>
+<td>running</td>
+<td>4</td>
+<td>2GB</td>
+</tr>
+<tr>
+<td>106</td>
+<td>gui-ubuntu-ansible</td>
+<td>running</td>
+<td>4</td>
+<td>4GB</td>
+</tr>
+<tr>
+<td>107</td>
+<td>docker-deb</td>
+<td>running</td>
+<td>2</td>
+<td>2GB</td>
+</tr>
+<tr>
+<td>108</td>
+<td>alma-rpm</td>
+<td>running</td>
+<td>1</td>
+<td>2GB</td>
+</tr>
+<tr>
+<td>109</td>
+<td>rocky-rpm</td>
+<td>running</td>
+<td>1</td>
+<td>2GB</td>
+</tr>
+<tr>
+<td>111</td>
+<td>kasm-2404-deb</td>
+<td>running</td>
+<td>2</td>
+<td>4GB</td>
+</tr>
+<tr>
+<td>112</td>
+<td>mediastack-deb</td>
+<td>running</td>
+<td>4</td>
+<td>4GB</td>
+</tr>
+<tr>
+<td>900</td>
+<td>ubuntu-24.04-template</td>
+<td>stopped</td>
+<td>1</td>
+<td>1GB</td>
+</tr>
+<tr>
+<td>901</td>
+<td>ubuntu-ansible</td>
+<td>running</td>
+<td>4</td>
+<td>4GB</td>
+</tr>
+</tbody>
+</table>
+<h3 id="lxc-containers">LXC Containers</h3>
+<table>
+<thead>
+<tr>
+<th>CTID</th>
+<th>Name</th>
+<th>Status</th>
+<th>CPU</th>
+<th>RAM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>100</td>
+<td>apache-deb</td>
+<td>running</td>
+<td>2</td>
+<td>4GB</td>
+</tr>
+<tr>
+<td>101</td>
+<td>grafana-dock</td>
+<td>running</td>
+<td>2</td>
+<td>4GB</td>
+</tr>
+<tr>
+<td>110</td>
+<td>pihole-book-deb</td>
+<td>running</td>
+<td>1</td>
+<td>0.5GB</td>
+</tr>
+<tr>
+<td>500</td>
+<td>snipe-it</td>
+<td>running</td>
+<td>1</td>
+<td>2GB</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="mediastack-deb-detail-192168136">mediastack-deb Detail (192.168.1.36)</h2>
+<p>Proxmox VM 112 | Ubuntu 24.04 | 4 cores | 4GB RAM
+<strong>⚠️ Root disk — expanded to 164GB, 17% used</strong> | Tailscale: 100.127.236.79</p>
+<h3 id="docker-containers">Docker Containers</h3>
+<table>
+<thead>
+<tr>
+<th>Container</th>
+<th>Port</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>romm</td>
+<td>8998</td>
+<td>ROM manager</td>
+</tr>
+<tr>
+<td>seerr</td>
+<td>5055</td>
+<td>Media requests</td>
+</tr>
+<tr>
+<td>komga</td>
+<td>8085</td>
+<td>Comics/ebooks</td>
+</tr>
+<tr>
+<td>mylar</td>
+<td>8091</td>
+<td>Comics downloader</td>
+</tr>
+<tr>
+<td>lidarr</td>
+<td>8686</td>
+<td>Music mgmt</td>
+</tr>
+<tr>
+<td>radarr</td>
+<td>7878</td>
+<td>Movie mgmt</td>
+</tr>
+<tr>
+<td>sabnzbd</td>
+<td>8090</td>
+<td>Usenet downloader</td>
+</tr>
+<tr>
+<td>sonarr</td>
+<td>8989</td>
+<td>TV mgmt</td>
+</tr>
+<tr>
+<td>vpn</td>
+<td>8080</td>
+<td>WireGuard VPN</td>
+</tr>
+<tr>
+<td>mariadb</td>
+<td>—</td>
+<td>DB for romm</td>
+</tr>
+<tr>
+<td>prowlarr</td>
+<td>9696</td>
+<td>Indexer manager</td>
+</tr>
+<tr>
+<td>audiobookshelf</td>
+<td>13378</td>
+<td>Audiobooks</td>
+</tr>
+</tbody>
+</table>
+<p>NAS CIFS mounts at <code>/mnt/plex/*</code>: Music420, Movies, Comics, AudioBooksPlex, Reading420, downloads, TV, Training, ROMs</p>
+<hr />
+<h2 id="git-ansible-deb-detail-19216813">git-ansible-deb Detail (192.168.1.3)</h2>
+<p>Ubuntu 24.04 | Disk: 63GB, 35% used | Tailscale: 100.68.195.68
+Ansible core 2.20.4 | Python 3.12.3
+Services: MkDocs :8000, nginx :80, MariaDB :3306 (localhost)
+Docs: <code>/home/cos/material/mkdocs_dev_material/docs/</code>
+VS Code Server installed</p>
+<hr />
+<h2 id="tailscale-nodes">Tailscale Nodes</h2>
+<table>
+<thead>
+<tr>
+<th>git-ansible</th>
+<th>100.68.195.68</th>
+<th>Linux</th>
+<th>Online</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mediastack-deb</td>
+<td>100.127.236.79</td>
+<td>Linux</td>
+<td>Online</td>
+</tr>
+<tr>
+<td>amontillado</td>
+<td>100.126.7.50</td>
+<td>Windows</td>
+<td>Online</td>
+</tr>
+<tr>
+<td>coe-thinkpad-p1-gen-4i</td>
+<td>100.81.219.113</td>
+<td>Linux</td>
+<td>Offline</td>
+</tr>
+<tr>
+<td>pixel-8</td>
+<td>100.110.116.11</td>
+<td>Android</td>
+<td>Offline</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="docker-swarm-2224-vip-250">Docker Swarm (.22–.24, VIP .250)</h2>
+<p>swarm01 (.22) — manager | swarm02 (.23) — worker | swarm03 (.24) — worker
+All nodes have Ceph user — storage cluster likely configured</p>
+<hr />
+<h2 id="security-flags">Security Flags</h2>
+<table>
+<thead>
+<tr>
+<th>Issue</th>
+<th>Affected Hosts</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fail2ban NOT installed</td>
+<td>mediastack-deb, docker-deb, grafana-docker-deb, pihole-book-deb</td>
+</tr>
+<tr>
+<td>chrony FAILED</td>
+<td>snipeit-deb, pihole-book-deb</td>
+</tr>
+<tr>
+<td>frodo user — empty password WARNING</td>
+<td>rocky-rpm, alma-rpm, plow-rpm</td>
+</tr>
+<tr>
+<td>FreeNAS 2019 EOL — no patches</td>
+<td>192.168.1.5</td>
+</tr>
+<tr>
+<td>Root disk 91% CRITICAL</td>
+<td>mediastack-deb</td>
+</tr>
+<tr>
+<td>/overlay/base 100% CRITICAL</td>
+<td>batocera-deb</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="known-issues-to-do">Known Issues / To Do</h2>
+<h3 id="critical">Critical</h3>
+<ul>
+<li>[x] ~~mediastack-deb root disk at 91% — expand VM disk or clean up Docker~~ ✅ 2026-04-09 — expanded to 164GB, now at 17% (127GB free)</li>
+<li>[x] ~~batocera-deb /overlay/base at 100%~~ ✅ 2026-04-09 — false alarm, this is the read-only Batocera OS squashfs image, expected behavior</li>
+</ul>
+<h3 id="in-progress">In Progress</h3>
+<ul>
+<li>[x] ~~docker-deb — broken packages (udev/libudev1 mismatch)~~ ✅ 2026-04-09</li>
+<li>[ ] plow-rpm — xrdp/SELinux conflict blocking updates — decide: exclude xrdp or remove it</li>
+<li>[x] ~~git-ansible-deb — cannot sudo via Ansible~~ ✅ 2026-04-10 — passwordless sudo configured</li>
+</ul>
+<h3 id="security">Security</h3>
+<ul>
+<li>[x] ~~frodo user deleted from rocky-rpm, alma-rpm, plow-rpm~~ ✅ 2026-04-09</li>
+<li>[x] ~~fail2ban installed on mediastack-deb~~ ✅ 2026-04-09</li>
+<li>[x] ~~fail2ban — docker-deb still missing (blocked by broken packages)~~ ✅ 2026-04-09</li>
+<li>[x] ~~fail2ban — update whitelist from 192.168.1.100 to 192.168.1.0/24~~ ✅ 2026-04-09</li>
+<li>[x] ~~fail2ban — exclude batocera-deb in playbook~~ ✅ 2026-04-09</li>
+<li>[x] ~~fail2ban — exclude git-ansible-deb in playbook~~ ✅ 2026-04-09</li>
+<li>[x] ~~Fix chrony on snipeit-deb and pihole-book-deb~~ ✅ 2026-04-09 — disabled in LXC containers, time sync handled by Proxmox host</li>
+<li>[x] ~~Add Tailscale to git-ansible-deb~~ ✅ 2026-04-10 (100.68.195.68)</li>
+</ul>
+<h3 id="maintenance">Maintenance</h3>
+<ul>
+<li>[x] ~~Most hosts updated via update_reboot_linux.yml~~ ✅ 2026-04-09</li>
+<li>[ ] Complete pending IP renumbering (Rocky/Alma/RHEL .51-.53 → .80-.82, Pis, TVs etc.)</li>
+<li>[ ] Fix duplicate mediastack-deb entry in inventory_auto</li>
+<li>[ ] Investigate pi1-deb and pi2-deb unreachable</li>
+</ul>
+<h3 id="long-term">Long Term</h3>
+<ul>
+<li>[ ] FreeNAS → TrueNAS Community Edition migration</li>
+<li>[ ] Clarify role of MariaDB and nginx on git-ansible-deb</li>
+</ul>
+<hr />
+<p><em>Generated from MkDocs docs + enum output | 2026-04-09</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../network-schema/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Network Schema">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Network Schema
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../hw_inv/" class="md-footer__link md-footer__link--next" aria-label="Next: Hardware Inventory">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Hardware Inventory
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 C. O'Shaughnessy as inspired by James Willett
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.footer"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
