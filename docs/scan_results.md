@@ -1,8 +1,8 @@
 # Network Scan Results
 
-_Last updated: 2026-04-14 08:00:15_
+_Last updated: 2026-04-15 17:00:15_
 
-_Hosts found: 32_
+_Hosts found: 33_
 
 ## Status
 
@@ -13,7 +13,7 @@ _Hosts found: 32_
 | 192.168.1.3 | git-ansible-deb | Debian/Ubuntu Linux | 22/ssh, 80/http, 8000/http-alt |  |
 | 192.168.1.5 | freenas-bsd | FreeBSD | 22/ssh, 80/http, 139/netbios, 445/smb | 94:DE:80:AF:52:23 |
 | 192.168.1.6 | netgate-net | Network Device | none detected | F0:AD:4E:1B:E7:62 |
-| 192.168.1.7 | maturin | Linux 5.0 - 5.5 | 22/ssh, 8006/proxmox | D8:9E:F3:0C:62:CC |
+| 192.168.1.7 | maturin | Linux 4.15 - 5.8 | 22/ssh, 8006/proxmox | D8:9E:F3:0C:62:CC |
 | 192.168.1.20 | snipeit-deb | Debian/Ubuntu Linux | 22/ssh, 80/http, 443/https, 8080/http-proxy, 9100/node-exporter | BC:24:11:04:68:29 |
 | 192.168.1.21 | grafana-docker-deb | Debian/Ubuntu Linux | 22/ssh, 3000/grafana, 8000/http-alt, 8080/http-proxy, 9090/prometheus, 9100/node-exporter, 9221/pve-exporter | BC:24:11:D6:72:F2 |
 | 192.168.1.22 | swarm01-deb | Debian/Ubuntu Linux | 22/ssh, 80/http, 9100/node-exporter | BC:24:11:9C:D8:2F |
@@ -32,6 +32,7 @@ _Hosts found: 32_
 | 192.168.1.100 | amontillado-win | Windows | 22/ssh, 135/msrpc, 139/netbios, 445/smb | 04:7C:16:C1:44:8E |
 | 192.168.1.101 | eld-win | Windows | 135/msrpc, 139/netbios, 445/smb, 8080/http-proxy | 90:2B:34:5E:B0:A2 |
 | 192.168.1.103 | todash-win | Windows | 80/http, 135/msrpc, 139/netbios, 445/smb, 8080/http-proxy | 00:15:5D:00:B3:08 |
+| 192.168.1.104 | work-win | Windows | none detected | 9C:29:76:42:1E:AE |
 | 192.168.1.106 | fortunato-win | Windows | none detected | 00:15:5D:00:B3:1A |
 | 192.168.1.122 | octopi-deb | Debian/Ubuntu Linux | 22/ssh, 80/http, 443/https, 9100/node-exporter | DC:A6:32:5E:04:08 |
 | 192.168.1.140 | tv1-media | Media Device | 3000/grafana | A8:23:FE:13:A9:D1 |
@@ -39,4 +40,4 @@ _Hosts found: 32_
 | 192.168.1.143 | weltgeist-media | Media Device | none detected | 94:DE:80:30:63:78 |
 | 192.168.1.144 | alea_iacta_est-media | Media Device | none detected | 94:DE:80:22:B6:05 |
 | 192.168.1.202 | fire-tablet-droid | Android | none detected | B0:FC:0D:51:8F:78 |
-| 192.168.1.250 | swarm-shared-vip | Virtual IP | 22/ssh, 80/http, 9100/node-exporter | BC:24:11:3C:60:0B |
+| 192.168.1.250 | swarm-shared-vip | Virtual IP | 22/ssh, 80/http, 8080/http-proxy, 9100/node-exporter | BC:24:11:9C:D8:2F |

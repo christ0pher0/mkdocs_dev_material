@@ -1,5 +1,5 @@
 # Hosts
-_Last update: 2026-04-14 08:05:01_
+_Last update: 2026-04-15 17:05:01_
 
 | # | Hostname | IP Address | MAC Address | OS | Status | Notes |
 |---|----------|------------|------------|----|--------|-------|
@@ -8,7 +8,7 @@ _Last update: 2026-04-14 08:05:01_
 | 3 | git-ansible-deb | 192.168.1.3 |  | Debian/Ubuntu Linux | Online | ------ |
 | 4 | freenas-bsd | 192.168.1.5 | 94:DE:80:AF:52:23 | FreeBSD | Online | ------ |
 | 5 | netgate-net | 192.168.1.6 | F0:AD:4E:1B:E7:62 | Network Device | Online | ------ |
-| 6 | maturin | 192.168.1.7 | D8:9E:F3:0C:62:CC | Linux 5.0 - 5.5 | Online | ------ |
+| 6 | maturin | 192.168.1.7 | D8:9E:F3:0C:62:CC | Linux 4.15 - 5.8 | Online | ------ |
 | 7 | snipeit-deb | 192.168.1.20 | BC:24:11:04:68:29 | Debian/Ubuntu Linux | Online | ------ |
 | 8 | grafana-docker-deb | 192.168.1.21 | BC:24:11:D6:72:F2 | Debian/Ubuntu Linux | Online | ------ |
 | 9 | swarm01-deb | 192.168.1.22 | BC:24:11:9C:D8:2F | Debian/Ubuntu Linux | Online | ------ |
@@ -27,11 +27,12 @@ _Last update: 2026-04-14 08:05:01_
 | 22 | amontillado-win | 192.168.1.100 | 04:7C:16:C1:44:8E | Windows | Online | ------ |
 | 23 | eld-win | 192.168.1.101 | 90:2B:34:5E:B0:A2 | Windows | Online | ------ |
 | 24 | todash-win | 192.168.1.103 | 00:15:5D:00:B3:08 | Windows | Online | ------ |
-| 25 | fortunato-win | 192.168.1.106 | 00:15:5D:00:B3:1A | Windows | Online | ------ |
-| 26 | octopi-deb | 192.168.1.122 | DC:A6:32:5E:04:08 | Debian/Ubuntu Linux | Online | ------ |
-| 27 | tv1-media | 192.168.1.140 | A8:23:FE:13:A9:D1 | Media Device | Online | ------ |
-| 28 | tv2-media | 192.168.1.141 | 22:57:5A:A7:04:87 | Media Device | Online | ------ |
-| 29 | weltgeist-media | 192.168.1.143 | 94:DE:80:30:63:78 | Media Device | Online | ------ |
-| 30 | alea_iacta_est-media | 192.168.1.144 | 94:DE:80:22:B6:05 | Media Device | Online | ------ |
-| 31 | fire-tablet-droid | 192.168.1.202 | B0:FC:0D:51:8F:78 | Android | Online | ------ |
-| 32 | swarm-shared-vip | 192.168.1.250 | BC:24:11:3C:60:0B | Virtual IP | Online | ------ |
+| 25 | work-win | 192.168.1.104 | 9C:29:76:42:1E:AE | Windows | Online | ------ |
+| 26 | fortunato-win | 192.168.1.106 | 00:15:5D:00:B3:1A | Windows | Online | ------ |
+| 27 | octopi-deb | 192.168.1.122 | DC:A6:32:5E:04:08 | Debian/Ubuntu Linux | Online | ------ |
+| 28 | tv1-media | 192.168.1.140 | A8:23:FE:13:A9:D1 | Media Device | Online | ------ |
+| 29 | tv2-media | 192.168.1.141 | 22:57:5A:A7:04:87 | Media Device | Online | ------ |
+| 30 | weltgeist-media | 192.168.1.143 | 94:DE:80:30:63:78 | Media Device | Online | ------ |
+| 31 | alea_iacta_est-media | 192.168.1.144 | 94:DE:80:22:B6:05 | Media Device | Online | ------ |
+| 32 | fire-tablet-droid | 192.168.1.202 | B0:FC:0D:51:8F:78 | Android | Online | ------ |
+| 33 | swarm-shared-vip | 192.168.1.250 | BC:24:11:9C:D8:2F | Virtual IP | Online | ------ |

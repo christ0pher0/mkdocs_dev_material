@@ -1,11 +1,11 @@
 # Disk Space Report
 
-_Last updated: 2026-04-14 08:15 AM EDT_
+_Last updated: 2026-04-15 05:15 PM EDT_
 ## Summary
 
 | Host | Healthy Filesystems |
 |------|-------------------|
-| git-ansible-deb | ✅ 2 OK |
+| git-ansible-deb | ✅ 3 OK |
 | snipeit-deb | ✅ 4 OK |
 | grafana-docker-deb | ✅ 9 OK |
 | swarm01-deb | ✅ 3 OK |
@@ -15,7 +15,7 @@ _Last updated: 2026-04-14 08:15 AM EDT_
 | kasm-2404-deb | ✅ 15 OK |
 | apache-deb | ✅ 5 OK |
 | pihole-book-deb | ✅ 2 OK |
-| docker-deb | ✅ 6 OK |
+| docker-deb | ✅ 7 OK |
 | 2404HV-deb | ✅ 4 OK |
 | mediastack-deb | ✅ 25 OK |
 | rocky-rpm | ✅ 2 OK |

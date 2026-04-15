@@ -1,6 +1,6 @@
 # User Audit Report
 
-_Last updated: 2026-04-14 02:00 AM EDT_
+_Last updated: 2026-04-15 02:00 AM EDT_
 
 ??? info "snipeit-deb (4 users)"
     | Username | UID | Shell | Sudo | Empty Password | Online |
@@ -63,10 +63,12 @@ _Last updated: 2026-04-14 02:00 AM EDT_
     | cos | 1000 | /bin/bash | YES | OK | ONLINE |
     | kasm | 1001 | /bin/sh | NO | OK | OFFLINE |
 
-??? info "docker-deb (1 users)"
+??? info "docker-deb (3 users)"
     | Username | UID | Shell | Sudo | Empty Password | Online |
     |----------|-----|-------|------|----------------|--------|
     | cos | 1000 | /bin/bash | YES | OK | ONLINE |
+    | snapd-range-524288-root | 524288 | /usr/bin/false | NO | OK | OFFLINE |
+    | snap_daemon | 584788 | /usr/bin/false | NO | OK | OFFLINE |
 
 ??? info "grafana-docker-deb (1 users)"
     | Username | UID | Shell | Sudo | Empty Password | Online |
